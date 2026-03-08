@@ -1,650 +1,1046 @@
-Build a complete crypto micro-task platform called TaskCoins. This is a platform where advertisers pay workers ("Chillers") in a crypto token called TASK to post content on their social media accounts. Build EVERY page listed below in full. Do NOT skip any page. Do NOT defer anything to "future iterations." Build it all now.
+# TaskCoins.io — Complete Platform Visual Prototype
 
-Design: Dark mode crypto-native aesthetic like dYdX or Blur. Background #0A0E17, card backgrounds #111827 with subtle glass-morphism (backdrop-blur, border border-white/10). Primary accent #388EFF (electric blue). Success green #09CE84. Warning orange #FFA01E. Danger red #FC564E. Text white #FFFFFF primary, #9CA3AF secondary. Font: Satoshi for headings (bold, clean), Inter for body text. Subtle blue glow on primary CTA buttons. Rounded corners on all cards (16px). Mobile-first responsive design — most users will be on phones.
+You are building a VISUAL PROTOTYPE of a crypto micro-task platform called TaskCoins. This is a design prototype to show a development team exactly how the platform should look and feel. Every page must be fully designed with realistic sample data. No backend, no database, no Supabase — just a beautiful, complete, fully navigable frontend prototype.
 
-Tech: React + TypeScript + Tailwind CSS + Supabase (auth + database + storage) + shadcn/ui components. Use React Router for navigation.
-
----
-
-PAGE 1: LANDING PAGE (route: /)
-
-Top navigation bar (sticky, dark, blur background):
-- Left: TaskCoins logo (text logo "TaskCoins" in Satoshi bold white, with a small blue coin icon next to it)
-- Center menu links: Home, Task Board, University, Services, Blog, Whitepaper, Roadmap
-- Right: "Connect Wallet" button (blue outline) and "Sign Up" button (blue filled)
-- Mobile: hamburger menu
-
-Hero section (full viewport height, centered):
-- Large heading: "Complete Tasks. Earn TaskCoins." in Satoshi bold, 56px desktop / 36px mobile
-- Subheading: "Get paid in crypto to post on social media. Join 1,200+ Chillers earning daily." in Inter, #9CA3AF, 20px
-- Two CTA buttons side by side: "Start Earning" (blue filled, large) and "Launch a Campaign" (blue outline, large)
-- Below buttons: three animated stat counters in a row: "12,847 Tasks Completed" | "2,450,000 TASK Distributed" | "1,234 Active Chillers" — numbers should have a counting-up animation on page load
-- Background: subtle gradient from #0A0E17 to #111827, optional subtle grid pattern or floating particle effect
-
-How It Works section:
-- Section heading: "How It Works" centered
-- Three cards in a row (stacked on mobile), each with:
-  - Card 1: Icon (user-plus), number "1", title "Sign Up", description "Create your free account as a Chiller or Advertiser. Connect your wallet or use email."
-  - Card 2: Icon (clipboard-check), number "2", title "Complete Tasks", description "Browse available tasks, post content on your social media accounts, and submit proof."
-  - Card 3: Icon (coins), number "3", title "Earn Crypto", description "Get paid in TaskCoins for every approved task. Hold for 100x or withdraw to your wallet."
-- Cards have glass-morphism styling with blue icon accents
-
-For Advertisers section:
-- Left side: heading "Get 300 Real People Posting About Your Project in 24 Hours", description paragraph explaining how advertisers create campaigns, set rewards, and get verified proof of every post. Mention platforms: X, Reddit, CoinMarketCap, Binance Square, YouTube, Telegram.
-- Right side: mockup card showing a sample campaign: "Promote $TOKEN Launch on X" — 150 TASK per post — 67/100 tasks completed — progress bar
-- CTA button: "Launch a Campaign"
-
-For Chillers section:
-- Right side: heading "Earn Crypto by Posting on Social Media — No Investment Needed", description explaining how Chillers browse tasks, post from their own accounts, submit screenshots as proof, and earn TaskCoins.
-- Left side: mockup card showing earnings dashboard preview: balance "12,450 TASK", level "Gold", tasks completed "234", reputation "87/100"
-- CTA button: "Start Earning"
-
-Trusted By section:
-- Horizontal logo bar with placeholder gray logos: "CoinDesk", "CoinTelegraph", "CoinMarketCap", "Uniswap", "MEXC" — use text placeholders styled as logos in gray
-
-Testimonials section:
-- Three testimonial cards in a row:
-  - Card 1: Avatar placeholder, "Ahmed K.", "Gold Chiller", "I've earned over 50,000 TASK in my first month. This platform changed my life.", 5 stars
-  - Card 2: Avatar placeholder, "Sarah M.", "Advertiser", "We got 280 verified posts about our token launch in under 12 hours. Insane ROI.", 5 stars
-  - Card 3: Avatar placeholder, "Carlos R.", "Diamond Chiller", "Better than any freelance platform. I earn while growing my own social accounts.", 5 stars
-
-Footer:
-- 4 columns: Platform (Home, Task Board, Leaderboard, Proof Gallery), Resources (University, Blog, Whitepaper, Roadmap), Services (PR Writing, YouTuber Promo, Distribution, dApp Creation), Legal (Terms, Privacy, Contact)
-- Bottom bar: "© 2026 TaskCoins. All rights reserved." and social icons (X, Telegram, Instagram, Discord)
+DO NOT skip any page. DO NOT defer anything. DO NOT simplify. Build every single page listed below with every element described. If you cut corners, the prototype is useless.
 
 ---
 
-PAGE 2: SIGN UP / LOGIN (route: /auth)
+## DESIGN SYSTEM
 
-- Centered card on dark background
-- Toggle tabs at top: "Chiller" and "Advertiser" — clicking each changes the form subtitle
-- Chiller selected: subtitle "Start earning crypto by completing social media tasks"
-- Advertiser selected: subtitle "Get your project promoted by thousands of real users"
-- Form fields: Display Name, Email, Password, Confirm Password
-- Optional field: "Referral Code" (pre-filled if URL has ?ref= parameter)
-- Checkbox: "I agree to the Terms of Service and Privacy Policy"
-- "Sign Up" button (blue, full width)
-- Divider: "or"
-- "Connect Wallet" button (outline, full width, MetaMask icon)
-- "Sign in with Google" button (outline, full width, Google icon)
-- Bottom text: "Already have an account? Log In" — links to login view
-- Login view: Email + Password fields + "Log In" button + "Forgot Password?" link
-- Use Supabase Auth for email/password signup and login (make it functional)
+**Theme:** Dark mode only. Crypto-native aesthetic inspired by dYdX, Blur, and Phantom wallet. Professional, premium, trustworthy.
+
+**Colors:**
+- Background: #0A0E17 (deep navy-black)
+- Card backgrounds: #111827 with glass-morphism effect (backdrop-blur-xl, border: 1px solid rgba(255,255,255,0.08))
+- Primary accent: #388EFF (electric blue) — used for CTAs, active states, highlights
+- Success: #09CE84 (green) — used for earnings, approved, positive numbers
+- Warning: #FFA01E (orange) — used for pending, caution
+- Danger: #FC564E (red) — used for rejected, errors, negative
+- Purple: #8B5CF6 — used for staking, premium features
+- Text primary: #FFFFFF
+- Text secondary: #9CA3AF
+- Text muted: #6B7280
+- Borders: rgba(255,255,255,0.08)
+- Hover states: rgba(56,142,255,0.1) background tint
+
+**Typography:**
+- Headings: font-family 'Satoshi', sans-serif — bold weight, clean geometric look
+- Body: font-family 'Inter', sans-serif — regular/medium weight
+- Hero heading: 56px desktop, 36px mobile
+- Section headings: 32px desktop, 24px mobile
+- Card titles: 18px bold
+- Body text: 16px, line-height 1.6
+- Small text: 14px
+- Stat numbers: 32px bold
+
+**Components:**
+- Cards: rounded-2xl (16px), bg-[#111827], border border-white/8, shadow-lg, hover:border-blue-500/30 transition
+- Buttons primary: bg-[#388EFF] hover:bg-[#2B7AE0], text-white, rounded-xl, px-6 py-3, font-semibold, subtle blue glow shadow
+- Buttons secondary: bg-transparent, border border-[#388EFF], text-[#388EFF], hover:bg-[#388EFF]/10
+- Badges: rounded-full, px-3 py-1, text-xs font-medium
+- Input fields: bg-[#0A0E17], border border-white/10, rounded-xl, text-white, focus:border-[#388EFF]
+- Tables: bg-[#111827], rounded-xl, divide-y divide-white/5
+
+**Icons:** Use Lucide icons throughout (Wallet, TrendingUp, CheckCircle, Star, Crown, Shield, Zap, Clock, Users, ArrowUpRight, Copy, Share2, Filter, Search, Menu, X, ChevronRight, Award, Flame, BarChart3, PieChart, Globe, BookOpen, Rocket, Code, Image, Lightbulb, FileText, Play, MessageSquare, Heart, Eye, ExternalLink)
 
 ---
 
-PAGE 3: CHILLER DASHBOARD (route: /dashboard/chiller)
+## NAVIGATION (appears on every page)
 
-Sidebar navigation (collapsible on mobile, becomes bottom tab bar):
+**Desktop header (sticky, h-16, bg-[#0A0E17]/80 backdrop-blur-xl, border-b border-white/5):**
+- Left: "TaskCoins" logo text in Satoshi bold 24px white, with a small blue circle/coin icon before the text
+- Center: navigation links in Inter 15px #9CA3AF, hover:text-white — Home, Task Board, University, Services, Blog, Whitepaper, Roadmap, Leaderboard
+- Right: "Connect Wallet" button (secondary/outline style, small wallet icon), "Sign Up" button (primary blue filled)
+- When "logged in" (simulate with a toggle or default to logged-in state on dashboard pages): show wallet icon + "0x4f2...8a3" truncated address + user avatar dropdown
+
+**Mobile header:**
+- Left: TaskCoins logo
+- Right: hamburger menu icon
+- Menu opens as a full-screen dark overlay with all nav links stacked vertically + Sign Up / Connect Wallet buttons at bottom
+
+**Dashboard pages get a sidebar (desktop) / bottom tab bar (mobile):**
+- Sidebar: 250px wide, bg-[#111827], full height, logo at top, menu items with Lucide icons, active item has blue left border + blue text + blue/10 background
+- Mobile bottom bar: 5 main tabs with icons — Home, Tasks, Wallet, Referrals, Profile
+
+---
+
+## PAGE 1: LANDING PAGE (/)
+
+This is the first page anyone sees. It must be stunning. Every section described below must be built.
+
+**Section 1 — Hero (full viewport height, centered content):**
+- Background: gradient from #0A0E17 to #0F172A, with a subtle animated grid pattern or floating dots/particles
+- Main heading: "Complete Tasks." on line 1, "Earn TaskCoins." on line 2 — Satoshi bold 56px (36px mobile), white, with "TaskCoins" highlighted in #388EFF
+- Subheading below: "Get paid in crypto to post on social media. Join thousands of Chillers earning daily." — Inter 20px (16px mobile), #9CA3AF
+- Two buttons side by side (stacked on mobile):
+  - "Start Earning" — primary blue filled, large (px-8 py-4), with ArrowUpRight icon
+  - "Launch a Campaign" — secondary outline, large, with Rocket icon
+- Below the buttons, three stat counters in a row with animated count-up effect:
+  - "12,847" with label "Tasks Completed" below — CheckCircle icon
+  - "2,450,000" with label "TASK Distributed" below — Wallet icon
+  - "1,234" with label "Active Chillers" below — Users icon
+  - Each stat in a small glass card with icon, number in 32px bold white, label in 14px #9CA3AF
+
+**Section 2 — How It Works (bg slightly different: #0F172A):**
+- Section heading: "How It Works" — centered, Satoshi 32px
+- Subheading: "Three simple steps to start earning crypto" — centered, #9CA3AF
+- Three cards in a row (1 column on mobile), connected by a subtle dashed line or arrow between them:
+  - Card 1: Large "01" in blue 48px, UserPlus icon in blue circle, title "Sign Up" in 20px bold, description "Create your free account as a Chiller or Advertiser. Connect your crypto wallet or sign up with email. It takes 30 seconds." in 15px #9CA3AF
+  - Card 2: Large "02" in blue, ClipboardCheck icon, title "Complete Tasks", description "Browse available tasks on the Task Board. Pick a task, post the content on your social media account, and submit proof with a screenshot and link."
+  - Card 3: Large "03" in blue, Coins icon, title "Earn TaskCoins", description "Every approved task earns you TaskCoins (TASK). Hold your tokens for long-term growth, stake them for bonus rewards, or withdraw to your wallet."
+  - Cards have glass-morphism styling, hover:scale-105 transition
+
+**Section 3 — For Advertisers:**
+- Two-column layout (stacked on mobile)
+- Left column:
+  - Small blue badge: "FOR ADVERTISERS"
+  - Heading: "Get 300 Real People Posting About Your Project in 24 Hours" — Satoshi 36px (28px mobile)
+  - Paragraph: "Create a campaign, set your budget, and let our army of verified Chillers distribute your content across X, Reddit, CoinMarketCap Community, Binance Square, YouTube, and Telegram. Every post comes with screenshot proof and a live link. Real accounts. Real engagement. Real results." — Inter 16px, #9CA3AF, line-height 1.8
+  - Bullet points with check icons:
+    - "6 platforms: X, Reddit, CMC, Binance Square, YouTube, Telegram"
+    - "Verified proof for every single post — screenshot + live link"
+    - "Target Chillers by level, reputation, and platform expertise"
+    - "Transparent pricing: 80% goes to workers, 20% platform fee"
+  - "Launch a Campaign" blue button with ArrowUpRight icon
+- Right column: a mockup campaign card showing:
+  - Card title: "Promote $TOKEN Launch"
+  - Platform badges: X, Reddit, CMC (small colored icons)
+  - "Reward: 150 TASK per post" in green
+  - Progress: "67/100 tasks completed" with progress bar
+  - "Status: Active" green badge
+  - "Budget: 15,000 TASK"
+  - "Estimated Reach: 450K"
+  - Two small proof thumbnails at bottom showing "screenshots submitted"
+
+**Section 4 — For Chillers:**
+- Two-column layout (reversed — content right, mockup left on desktop)
+- Right column:
+  - Small green badge: "FOR CHILLERS"
+  - Heading: "Earn Crypto by Posting on Social Media — No Investment Needed" — Satoshi 36px
+  - Paragraph: "Browse tasks on the Task Board, post content from your own social media accounts, submit a screenshot as proof, and earn TaskCoins for every approved task. The more tasks you complete, the higher your level, and the higher-paying tasks you unlock. Top Chillers earn thousands of TASK every month." — Inter 16px, #9CA3AF
+  - Bullet points with check icons:
+    - "No investment required — earn from day one"
+    - "Level up: Bronze → Silver → Gold → Diamond → Legend"
+    - "5% referral bonus — earn from everyone you invite, forever"
+    - "Stake your earnings for bonus rewards and premium tasks"
+  - "Start Earning" blue button
+- Left column: a mockup Chiller dashboard card showing:
+  - "Available Balance: 12,450 TASK" in large green numbers
+  - "Level: Gold" with a gold badge icon
+  - "Tasks Completed: 234"
+  - "Reputation: 87/100" with a circular progress gauge
+  - Small earnings chart (sparkline showing uptrend)
+  - "Referral Earnings: 1,240 TASK"
+
+**Section 5 — Platform Stats (full width, bg #111827):**
+- Section heading: "The Numbers Speak" — centered
+- Four large stat boxes in a row (2x2 on mobile):
+  - "$2.4M" — "Total Value Distributed" — TrendingUp icon
+  - "847" — "Active Campaigns" — BarChart3 icon
+  - "156K" — "Posts Verified" — CheckCircle icon
+  - "98.7%" — "Approval Rate" — Award icon
+- Each box: glass card, icon in colored circle at top, large number in white 40px bold, label in #9CA3AF 14px
+
+**Section 6 — Token Info:**
+- Two-column layout
+- Left:
+  - Small purple badge: "TASKCOINS TOKEN"
+  - Heading: "Powered by $TASK — An ERC-20 Utility Token" — Satoshi 36px
+  - Paragraph: "TaskCoins (TASK) is the native currency of the platform. Advertisers buy TASK to fund campaigns. Chillers earn TASK for completing tasks. The token has real, built-in demand — every campaign requires purchasing TASK tokens. With quarterly token burns, staking rewards, and a growing user base, TASK is designed for long-term value growth." — Inter 16px, #9CA3AF
+  - Key facts list:
+    - "Total Supply: 590,000,000 TASK"
+    - "Network: Ethereum (ERC-20)"
+    - "No on-chain tax — zero transfer fees"
+    - "5% of platform fees burned every quarter"
+    - "Staking available for bonus rewards"
+  - Two buttons: "Read Whitepaper" (secondary), "Buy on Uniswap" (primary)
+- Right: Token allocation donut chart showing:
+  - Uniswap Liquidity 30% (blue)
+  - Platform Treasury 25% (green)
+  - Team 15% (orange) — "12-month vesting"
+  - Community Airdrop 10% (purple)
+  - Marketing 10% (yellow)
+  - Staking Rewards 10% (cyan)
+  - Legend below the chart with color dots + label + percentage + token amount
+
+**Section 7 — Trusted By / Press:**
+- Horizontal logo bar, centered
+- "As Featured In" small heading above
+- Logos (use text styled as logos in gray #4B5563, each in a subtle bordered box): CoinDesk, CoinTelegraph, CoinMarketCap, Bitcoin Magazine, Uniswap, MEXC
+- Logos should be grayscale, hover:white transition
+
+**Section 8 — Testimonials:**
+- Section heading: "What Our Community Says" — centered
+- Three testimonial cards in a row (scroll on mobile):
+  - Card 1: circle avatar placeholder (gradient blue), "Ahmed K." bold, "Gold Chiller — Morocco" in #9CA3AF, five yellow star icons, quote: "I've earned over 50,000 TASK in my first month. The withdrawal warming system actually helped me — by the time I could withdraw, my tokens were worth 5x more. This platform changed my life."
+  - Card 2: circle avatar placeholder (gradient green), "Sarah M." bold, "Advertiser — United States" in #9CA3AF, five stars, quote: "We got 280 verified posts about our token launch in under 12 hours. Every single one came with a screenshot and live link. The ROI compared to traditional marketing agencies is insane."
+  - Card 3: circle avatar placeholder (gradient purple), "Carlos R." bold, "Diamond Chiller — Brazil" in #9CA3AF, five stars, quote: "Better than any freelance platform I've used. I earn TaskCoins while growing my own social media accounts. The level system keeps me motivated — I'm grinding for Legend."
+  - Cards have quote icon (") in blue at top-left
+
+**Section 9 — CTA Banner (full width, gradient from #388EFF to #2563EB):**
+- Heading: "Ready to Start?" — white 40px bold
+- Subheading: "Join 1,200+ Chillers earning TaskCoins every day" — white/80
+- Two buttons side by side: "Start Earning" (white bg, blue text), "Launch a Campaign" (white outline, white text)
+
+**Section 10 — Footer (bg #0A0E17, border-t border-white/5):**
+- 4 columns (stacked on mobile):
+  - Column 1 "Platform": Home, Task Board, Leaderboard, Proof Gallery, Advertiser Marketplace
+  - Column 2 "Resources": University, Blog, Whitepaper, Roadmap, Documentation
+  - Column 3 "Services": PR Writing, YouTuber Promotion, Outlet Distribution, dApp Creation, Token Launch, Smart Contract Audit
+  - Column 4 "Legal": Terms of Service, Privacy Policy, Cookie Policy, Contact Us
+- Bottom bar: left "© 2026 TaskCoins. All rights reserved.", right: social icons (X, Telegram, Instagram, Discord, GitHub) — white/40, hover:white
+
+---
+
+## PAGE 2: SIGN UP & LOGIN (/auth)
+
+Centered on the page, max-width 480px card on dark background.
+
+**Sign Up view (default):**
+- Card with glass-morphism styling, padding 40px
+- TaskCoins logo at top center
+- Heading: "Create Your Account" — Satoshi 28px
+- Toggle pill/tabs: "Chiller" | "Advertiser" — selected has blue bg, unselected has transparent
+  - When "Chiller" selected, subtitle: "Start earning crypto by completing social media tasks"
+  - When "Advertiser" selected, subtitle: "Get your project promoted by thousands of verified users"
+- Form fields (each with label above, glass-style input):
+  - "Display Name" — text input, placeholder "Enter your name"
+  - "Email Address" — email input, placeholder "you@example.com"
+  - "Password" — password input with show/hide eye icon, placeholder "Create a password"
+  - "Confirm Password" — password input, placeholder "Confirm your password"
+  - "Referral Code (optional)" — text input, placeholder "Enter referral code", smaller text below: "Have a friend on TaskCoins? Enter their code to connect."
+- Checkbox: "I agree to the Terms of Service and Privacy Policy" (with links underlined)
+- "Create Account" button — full width, primary blue, large
+- Divider line with "or" text in center
+- "Connect Wallet" button — full width, secondary outline, Wallet icon left — text "Sign up with MetaMask"
+- "Continue with Google" button — full width, secondary outline, Google G icon
+- Bottom text: "Already have an account?" + "Log In" blue link
+
+**Log In view:**
+- Same card styling
+- Heading: "Welcome Back"
+- Subtitle: "Log in to your TaskCoins account"
+- Form: Email + Password (with show/hide) fields
+- "Log In" primary blue button full width
+- "Forgot Password?" link below in blue
+- Divider + "Connect Wallet" + "Continue with Google" buttons
+- Bottom: "Don't have an account?" + "Sign Up" blue link
+
+---
+
+## PAGE 3: CHILLER DASHBOARD (/dashboard/chiller)
+
+**Sidebar (desktop):**
 - Logo at top
-- Menu items with icons: Dashboard, Task Board, My Tasks, Wallet, Staking, Leaderboard, Referrals, University, Profile, Settings
-- Active item highlighted with blue background
-- Bottom: user avatar + display name + level badge
+- User section: avatar circle with initial letter, display name "Ahmed K.", level badge "Gold" in gold color, "87 Rep" small text
+- Menu items with Lucide icons, 14px Inter, #9CA3AF, active: white text + blue left border + blue/10 bg:
+  - LayoutDashboard — Dashboard (active)
+  - ClipboardList — Task Board
+  - ListTodo — My Tasks
+  - Wallet — Wallet
+  - Lock — Staking
+  - Trophy — Leaderboard
+  - Users — Referrals
+  - BookOpen — University
+  - User — Profile
+  - Settings — Settings
+- Bottom of sidebar: small "Logout" link in red/50
 
-Main content area:
+**Main content:**
 
-Top row — 5 stat cards in a horizontal row (scrollable on mobile):
-- Card 1: "Available Balance" — "8,450 TASK" — green icon (wallet)
-- Card 2: "Total Earned" — "24,200 TASK" — blue icon (trending-up)
-- Card 3: "Tasks Completed" — "186" — purple icon (check-circle)
-- Card 4: "Current Level" — "Gold" with gold badge icon — progress bar below showing "186/200 tasks to Diamond"
-- Card 5: "Reputation Score" — circular gauge showing "87/100" — green color
+**Row 1 — Welcome + Quick Stats:**
+- "Welcome back, Ahmed" — 28px Satoshi bold
+- "Here's your earning overview" — 16px #9CA3AF
+- 5 stat cards in a row (horizontal scroll on mobile, each min-width 200px):
+  - Card 1 (green tint): Wallet icon in green circle, "Available Balance" label in 13px #9CA3AF, "8,450 TASK" in 28px bold white, "≈ $845.00" in 14px #9CA3AF below
+  - Card 2 (blue tint): TrendingUp icon in blue circle, "Total Earned" label, "24,200 TASK" value, "+1,250 this week" in small green text
+  - Card 3 (purple tint): CheckCircle icon in purple circle, "Tasks Completed" label, "186" value, "12 this week" in small text
+  - Card 4 (gold tint): Award icon in gold circle, "Current Level" label, "Gold" value with gold badge, progress bar below: "186/200 — 14 more tasks to Diamond" in 12px
+  - Card 5 (blue tint): Shield icon in blue circle, "Reputation" label, circular gauge/ring showing 87/100, green color for the ring
 
-Earnings Chart section:
-- Line chart showing earnings over last 30 days (use Recharts)
-- X-axis: dates, Y-axis: TASK earned
-- Use sample data: gradual uptrend with some variation
-- Toggle: 7 days / 30 days / 90 days
+**Row 2 — Earnings Chart:**
+- Glass card, full width
+- Header: "Earnings Overview" left, time toggle right: "7D" | "30D" | "90D" pill buttons (30D active/blue)
+- Line chart (area chart with gradient fill below the line):
+  - X axis: dates (last 30 days, show every 5th date)
+  - Y axis: TASK amounts
+  - Line color: #388EFF
+  - Area fill: gradient from #388EFF/20 to transparent
+  - Sample data: upward trend with natural variation, starting ~200 TASK/day, ending ~400 TASK/day
+  - Tooltip on hover showing exact date and amount
 
-Available Tasks Preview section:
-- Heading: "Top Paying Tasks" with "View All" link to /tasks
-- 5 task cards in a list:
-  - Each card shows: platform icon (X, Reddit, etc.), task title, reward amount in TASK, required level badge, time remaining, progress bar (completed/total)
-  - Sample tasks:
-    1. X icon — "Share TokenX Launch Announcement" — 200 TASK — Gold+ — 18h left — 45/100
-    2. Reddit icon — "Post in r/cryptocurrency about DeFi Protocol" — 150 TASK — Silver+ — 23h left — 12/50
-    3. CMC icon — "Community post about $TASK utility" — 100 TASK — Bronze+ — 12h left — 89/100
-    4. Binance Square icon — "Write about AI crypto trends" — 175 TASK — Gold+ — 20h left — 23/75
-    5. YouTube icon — "Comment on crypto review video" — 75 TASK — Bronze+ — 8h left — 67/80
-  - Each card has a "Claim" button on the right
+**Row 3 — Two columns (stacked on mobile):**
 
-Recent Activity feed:
-- List of recent events: "Task #234 approved — +150 TASK", "Referral bonus — +12 TASK", "Level up! You reached Gold", "Task #231 approved — +100 TASK"
-- Each with timestamp and icon
+Left column — "Top Paying Tasks" (with "View All →" link to /tasks):
+- 5 task items in a list, each as a small card/row:
+  1. Blue X icon | "Share $TOKEN Launch on X" | "200 TASK" green | "Gold+" badge | "18h left" with clock | "45/100" small progress bar | "Claim" small blue button
+  2. Orange Reddit icon | "Post about DeFi Protocol in r/crypto" | "150 TASK" | "Silver+" | "23h left" | "12/50" | "Claim"
+  3. Blue CMC icon | "Community post about $TASK utility" | "100 TASK" | "Any" | "12h left" | "89/100" | "Claim"
+  4. Yellow Binance icon | "Write about AI crypto trends" | "175 TASK" | "Gold+" | "20h left" | "23/75" | "Claim"
+  5. Red YouTube icon | "Comment on crypto review video" | "75 TASK" | "Any" | "8h left" | "67/80" | "Claim"
 
----
+Right column — "Recent Activity":
+- Activity feed list (8 items), each with icon, description, timestamp, and TASK amount:
+  - CheckCircle green — "Task #247 approved" — "+200 TASK" green — "2 hours ago"
+  - Users blue — "Referral bonus from @maria_r" — "+12 TASK" green — "5 hours ago"
+  - Award gold — "Level up! You reached Gold" — "" — "Yesterday"
+  - CheckCircle green — "Task #244 approved" — "+150 TASK" green — "Yesterday"
+  - CheckCircle green — "Task #241 approved" — "+100 TASK" green — "2 days ago"
+  - Lock purple — "Staked 5,000 TASK — Tier 2 unlocked" — "" — "3 days ago"
+  - CheckCircle green — "Task #238 approved" — "+175 TASK" green — "3 days ago"
+  - Users blue — "New referral: @carlos_r signed up" — "" — "4 days ago"
 
-PAGE 4: TASK BOARD (route: /tasks)
-
-Top bar:
-- Heading: "Task Board"
-- View toggle: Grid view / List view icons
-- Search bar: "Search tasks..."
-
-Filter sidebar (left on desktop, slide-out sheet on mobile):
-- Platform filter (checkboxes with icons): X (Twitter), Reddit, CoinMarketCap, Binance Square, YouTube, Telegram, All
-- Reward range: slider from 0 to 500 TASK
-- Minimum level required: dropdown (Any, Bronze, Silver, Gold, Diamond)
-- Sort by: dropdown (Newest, Highest Reward, Ending Soon, Most Available)
-- "Apply Filters" button and "Reset" link
-
-Task cards grid (3 columns desktop, 2 tablet, 1 mobile):
-Each card (glass-morphism, dark card):
-- Top: platform icon + platform name badge (e.g., blue "X" badge)
-- Title: task name (bold, white)
-- Description: 2 lines max, truncated with ellipsis
-- Stats row: reward "200 TASK" in green | required level badge | time remaining with clock icon
-- Progress bar: "67/100 completed" with percentage
-- Bottom: "Claim Task" blue button (full width of card)
-
-Pre-populate with 12 sample tasks across all 6 platforms with varied rewards (50-300 TASK), levels, and completion percentages.
-
-Click on a task card → Task Detail modal or page:
-- Full task title and description
-- Platform with icon
-- Advertiser name with avatar
-- Reward: "200 TASK" large and green
-- Required level and minimum reputation
-- Specific instructions: "Copy the text below and post it on your X account with the provided image. Include all hashtags."
-- Content to post: text area (read-only, with "Copy" button)
-- Image to use: image preview (if provided by advertiser)
-- Submit proof section: file upload area ("Upload screenshot of your post") + text input ("Paste the URL of your post")
-- "Submit Proof" blue button
-- "Cancel" outline button
+**Row 4 — Referral Banner (full width, subtle blue gradient bg):**
+- Left: "Invite friends. Earn 5% of everything they make — forever." in 20px bold
+- Right: referral link "taskcoins.io/ref/AHMED2024" with "Copy" button + share icons (X, Telegram, WhatsApp)
 
 ---
 
-PAGE 5: MY TASKS (route: /dashboard/chiller/my-tasks)
+## PAGE 4: TASK BOARD (/tasks)
 
-4 tabs: Active (3), Submitted (5), Approved (42), Rejected (2) — numbers in badges
+**Top bar:**
+- Heading: "Task Board" — 28px Satoshi bold
+- Right side: Search bar (glass input, Search icon, placeholder "Search tasks...") + View toggle (Grid icon | List icon, grid active)
 
-Active tab:
-- Cards showing claimed tasks with countdown timer "18h 32m remaining"
-- "Submit Proof" button on each
-- "Release Task" secondary button (returns task to pool)
+**Filter sidebar (left, 250px on desktop — slide-out sheet on mobile with Filter icon button to open):**
+- "Filters" heading with "Reset All" link
+- **Platform** section: checkboxes with colored icons next to each:
+  - ☐ All Platforms
+  - ☐ X (Twitter) — blue icon
+  - ☐ Reddit — orange icon
+  - ☐ CoinMarketCap — blue icon
+  - ☐ Binance Square — yellow icon
+  - ☐ YouTube — red icon
+  - ☐ Telegram — blue icon
+- **Reward Range** section: dual-handle slider 0 to 500 TASK, showing "50 - 300 TASK" selected range
+- **Level Required** section: dropdown select with options: Any Level, Bronze+, Silver+, Gold+, Diamond+
+- **Sort By** section: dropdown with: Newest First, Highest Reward, Ending Soon, Most Available
+- "Apply Filters" blue button (full width)
 
-Submitted tab:
-- Cards showing submitted tasks with "Awaiting Review" yellow badge
-- Shows submitted screenshot thumbnail and link
+**Task grid (3 columns desktop, 2 tablet, 1 mobile):**
+12 task cards total. Each card (glass card, rounded-2xl, hover:border-blue-500/30):
+- Top-left: Platform icon + colored platform badge (e.g., blue rounded badge "X (Twitter)" or orange "Reddit")
+- Top-right: time remaining "18h 32m" with Clock icon in #9CA3AF
+- Title: task name in 17px bold white — "Share $TOKEN Launch Announcement on X"
+- Description: 2 lines max, truncated, 14px #9CA3AF — "Copy the provided text and image, post it on your X account with all hashtags. Tag @tokenproject."
+- Divider line (border-white/5)
+- Stats row:
+  - "200 TASK" in #09CE84 bold with Coins icon
+  - "Gold+" level badge (gold colored small badge)
+  - "45/100" with small progress bar
+- "Claim Task" button — full width, primary blue, rounded-xl
+
+Sample tasks (vary these across the 12 cards):
+1. X — "Share $TOKEN Launch Announcement" — 200 TASK — Gold+ — 18h — 45/100
+2. Reddit — "Post in r/cryptocurrency about DeFi Protocol" — 150 TASK — Silver+ — 23h — 12/50
+3. CMC — "Community post about $TASK utility" — 100 TASK — Any — 12h — 89/100
+4. Binance Square — "Write about AI crypto trends" — 175 TASK — Gold+ — 20h — 23/75
+5. YouTube — "Comment on crypto review video" — 75 TASK — Any — 8h — 67/80
+6. Telegram — "Share announcement in 3 Telegram groups" — 50 TASK — Any — 24h — 34/100
+7. X — "Retweet and quote tweet about NFT collection" — 120 TASK — Silver+ — 16h — 55/80
+8. Reddit — "Post analysis in r/defi" — 200 TASK — Gold+ — 20h — 8/30
+9. CMC — "Bullish post about $ETH community" — 80 TASK — Any — 6h — 91/100
+10. Binance Square — "Share trading strategy post" — 150 TASK — Silver+ — 22h — 18/50
+11. X — "Thread about Web3 gaming launch" — 250 TASK — Diamond+ — 24h — 5/20
+12. YouTube — "Review video comment with insights" — 100 TASK — Bronze+ — 14h — 42/60
+
+**Task Detail (opens when clicking a card — modal overlay or separate page):**
+- Top: back arrow + "Task Details"
+- Platform badge (large) + task title in 24px bold
+- Advertiser info: small avatar + "Posted by CryptoProject_X" + "Active Advertiser" green badge
+- Stats row: "200 TASK" reward large green | "Gold+ required" badge | "18h 32m remaining" clock | "45/100 completed" progress
+- Divider
+- "Instructions" section heading:
+  - "1. Copy the text below exactly as written"
+  - "2. Post it on your X (Twitter) account"
+  - "3. Include the provided image in your post"
+  - "4. Make sure to include all hashtags"
+  - "5. Take a screenshot of your live post"
+  - "6. Submit the screenshot and your post URL below"
+- "Content to Post" section: dark box with the text to copy, "Copy Text" button in top-right with Copy icon
+- "Image to Include" section: image preview thumbnail (placeholder gradient image), "Download Image" button
+- Divider
+- "Submit Proof" section:
+  - File upload area: dashed border box, "Upload screenshot of your post" text, "Click to upload or drag and drop" subtext, "PNG, JPG up to 10MB" small text
+  - Text input: "Post URL" — placeholder "https://x.com/youraccount/status/..."
+  - "Submit Proof" blue button (large, full width)
+  - "Cancel" secondary button below
+
+---
+
+## PAGE 5: MY TASKS (/dashboard/chiller/my-tasks)
+
+- Heading: "My Tasks" — 28px
+- 4 tab buttons: "Active (3)" | "Submitted (5)" | "Approved (42)" | "Rejected (2)" — active tab has blue underline + white text, others #9CA3AF. Numbers in small blue badge circles.
+
+**Active tab (default):**
+3 task cards, each showing:
+- Platform icon + task title + advertiser name
+- Reward: "200 TASK" green
+- Countdown: "18h 32m remaining" with animated clock icon, orange if < 6h
+- "Submit Proof" blue button + "Release Task" small gray text button below
+
+**Submitted tab:**
+5 task cards, each showing:
+- Platform icon + task title
+- "Awaiting Review" yellow badge with Clock icon
+- Submitted proof: small screenshot thumbnail + link text (truncated)
 - "Submitted 2 hours ago" timestamp
 
-Approved tab:
-- Cards with green "Approved" badge and "+200 TASK" earned amount
-- Shows proof screenshot and link as submitted
+**Approved tab:**
+List of 10 visible (with "Show More" to see all 42):
+- Each: platform icon + task title + "Approved" green badge with CheckCircle
+- "+200 TASK" in green bold on the right
+- "Approved 3 hours ago" timestamp
+- Small screenshot thumbnail
 
-Rejected tab:
-- Cards with red "Rejected" badge
-- Shows rejection reason: "Screenshot does not match required content"
-- "Resubmit" button if resubmission is allowed
-
-Pre-populate each tab with sample data.
-
----
-
-PAGE 6: ADVERTISER DASHBOARD (route: /dashboard/advertiser)
-
-Sidebar navigation:
-- Menu items: Dashboard, Create Campaign, My Campaigns, Review Proofs, Analytics, Wallet, Settings
-- Active item highlighted blue
-
-Main content:
-
-Top row — 5 stat cards:
-- "Total Spend" — "145,000 TASK" — blue
-- "Active Campaigns" — "3" — green
-- "Tasks Completed" — "847" — purple
-- "Posts Live" — "823" — green
-- "Estimated Reach" — "1.2M" — orange
-
-Active Campaigns section:
-- 3 campaign cards:
-  1. "Launch $TOKEN on X" — Active — 67/100 tasks done — progress bar — "Created 2 days ago"
-  2. "Reddit AMA Promotion" — Active — 23/50 tasks done — "Created 5 days ago"
-  3. "CMC Community Push" — Completed — 100/100 tasks done — green checkmark — "Completed yesterday"
-- Each card: click to view details
-
-Recent Proof Submissions:
-- List of 5 recent submissions awaiting review with Chiller avatar, username, task name, "Review" button
-- Quick approve/reject buttons visible
-
-Quick action: "Create New Campaign" large blue CTA button
+**Rejected tab:**
+2 cards:
+- Platform icon + task title + "Rejected" red badge with XCircle
+- Rejection reason in red/orange text: "Screenshot does not match the required content. The post is missing the required hashtags."
+- "Resubmit" blue outline button
 
 ---
 
-PAGE 7: CREATE CAMPAIGN (route: /dashboard/advertiser/create)
+## PAGE 6: ADVERTISER DASHBOARD (/dashboard/advertiser)
 
-Step-by-step wizard with progress bar at top showing steps 1-5:
+**Sidebar** (same style as Chiller but different menu items):
+- LayoutDashboard — Dashboard (active)
+- PlusCircle — Create Campaign
+- FolderOpen — My Campaigns
+- Eye — Review Proofs
+- BarChart3 — Analytics
+- Wallet — Wallet
+- Settings — Settings
 
-Step 1 — Choose Platforms:
-- Heading: "Where do you want your content posted?"
-- 6 platform cards in a grid (2x3), each with large icon, platform name, and description:
-  - X (Twitter) — "Reach crypto Twitter"
-  - Reddit — "Engage subreddit communities"
-  - CoinMarketCap — "Post in coin communities"
-  - Binance Square — "Binance's social platform"
-  - YouTube — "Comments on crypto videos"
-  - Telegram — "Share in Telegram groups"
-- Multi-select: clicking a card toggles blue border highlight and checkmark
-- "Next" button
+**Main content:**
 
-Step 2 — Create Content:
+**Row 1 — Stats (5 cards):**
+- "Total Spend" — 145,000 TASK — Wallet blue icon — "32,000 this month" small text
+- "Active Campaigns" — 3 — Rocket green icon — "2 completed" small text
+- "Tasks Completed" — 847 — CheckCircle purple icon — "+124 this week" small text
+- "Posts Live" — 823 — Globe green icon — "98% live rate" small text
+- "Estimated Reach" — 1.2M — Eye orange icon — "across 6 platforms" small text
+
+**Row 2 — Active Campaigns:**
+- Section header: "Active Campaigns" + "Create New Campaign" blue button on right
+- 3 campaign cards (horizontal, each takes full width):
+  - Card 1: "Launch $TOKEN on X & Reddit" — platform icons (X, Reddit) — status "Active" green badge — "67/100 tasks" with progress bar at 67% — "Spend: 15,000 TASK" — "Created 2 days ago" — "View Details" link
+  - Card 2: "Reddit AMA Promotion" — Reddit icon — "Active" — "23/50 tasks" progress 46% — "Spend: 7,500 TASK" — "Created 5 days ago"
+  - Card 3: "CMC Community Push Q1" — CMC icon — "Completed" green badge with check — "100/100 tasks" progress 100% green — "Spend: 10,000 TASK" — "Completed yesterday"
+
+**Row 3 — Two columns:**
+
+Left — "Recent Proof Submissions" (with "Review All →" link):
+- 5 submission rows:
+  - Avatar circle + "CryptoKing" + Gold badge → "Share $TOKEN on X" → small screenshot thumb → "2 min ago" → "Review" blue button
+  - Avatar + "maria_r" + Silver → "Reddit AMA post" → screenshot → "15 min ago" → "Review"
+  - Avatar + "DefiHunter" + Gold → "CMC community post" → screenshot → "1 hour ago" → "Review"
+  - Avatar + "carlos_crypto" + Diamond → "Binance Square write-up" → screenshot → "2 hours ago" → "Review"
+  - Avatar + "web3sarah" + Silver → "YouTube comment" → screenshot → "3 hours ago" → "Review"
+
+Right — "Campaign Performance" mini chart:
+- Small bar chart showing tasks completed per day for last 7 days
+- Total: "124 tasks this week"
+
+---
+
+## PAGE 7: CREATE CAMPAIGN (/dashboard/advertiser/create)
+
+Full-page wizard with progress bar at top.
+
+**Progress bar:** 5 steps, connected by lines, current step = blue circle with number, completed = green circle with check, upcoming = gray circle with number. Labels below each: "Platforms" → "Content" → "Requirements" → "Budget" → "Review"
+
+**Step 1 — Choose Platforms:**
+- Heading: "Where do you want your content posted?" — 28px Satoshi
+- Subheading: "Select one or more platforms. You can target multiple platforms in a single campaign." — #9CA3AF
+- 6 platform cards in 3x2 grid (2x3 on mobile). Each card (glass, rounded-2xl, padding 24px, text-center):
+  - When unselected: normal border, icon in gray
+  - When selected: border-[#388EFF], blue glow, icon in color, small blue checkmark in top-right corner
+  - Card 1: large blue X icon, "X (Twitter)" bold, "280M monthly active users. Best for crypto announcements and threads." small text
+  - Card 2: large orange Reddit icon, "Reddit", "430M monthly active users. Best for community discussions and analysis posts."
+  - Card 3: large blue CMC icon, "CoinMarketCap", "350M monthly visits. Best for coin-specific community posts."
+  - Card 4: large yellow Binance icon, "Binance Square", "150M users. Best for trading insights and market analysis."
+  - Card 5: large red YouTube icon, "YouTube", "2.5B monthly active users. Best for video comments and engagement."
+  - Card 6: large blue Telegram icon, "Telegram", "800M monthly active users. Best for group sharing and announcements."
+- Bottom: "Next →" blue button right-aligned + "Cancel" gray link left
+
+**Step 2 — Create Content:**
 - Heading: "What should Chillers post?"
-- Large text area: "Write the content for Chillers to copy and post" (placeholder text showing example post)
-- Image upload: drag-and-drop area with "Upload an image for the post (optional)" — shows preview after upload
-- Link field: "Include a link in the post (optional)"
-- Instructions text area: "Any specific instructions for Chillers? (optional)" — placeholder: "Make sure to include all hashtags and tag @projecthandle"
-- "Next" button, "Back" button
+- "Post Content" label + large textarea (6 rows, glass input), placeholder: "Write the exact text you want Chillers to copy and post. Include hashtags, mentions, and any specific messaging..."
+- "Upload Image (optional)" — drag-and-drop zone: dashed border, cloud-upload icon, "Drag and drop an image or click to browse", "PNG, JPG, GIF up to 5MB" — after upload shows image preview with "Remove" X button
+- "Link to Include (optional)" — text input, placeholder "https://yourproject.com"
+- "Special Instructions (optional)" — textarea (3 rows), placeholder "Any additional instructions for Chillers? E.g., 'Tag @ourproject', 'Use at least 3 hashtags', 'Post between 9 AM - 12 PM EST'"
+- Bottom: "← Back" gray button left, "Next →" blue button right
 
-Step 3 — Set Requirements:
+**Step 3 — Set Requirements:**
 - Heading: "Who can complete your tasks?"
-- Minimum Chiller Level: dropdown with options Any Level, Silver+, Gold+, Diamond+ — each with description of what it means
-- Minimum Reputation Score: slider 0-100, default 0, shows current value
-- Task deadline: "How long do Chillers have to complete?" dropdown: 12 hours, 24 hours, 48 hours, 72 hours
-- "Next" button, "Back" button
+- "Minimum Chiller Level" — 5 clickable option cards in a row:
+  - "Any Level" (green border if selected) — "Open to all Chillers"
+  - "Silver+" — "50+ tasks completed"
+  - "Gold+" — "200+ tasks completed"
+  - "Diamond+" — "500+ tasks completed"
+  - "Legend" — "1,000+ tasks completed"
+- "Minimum Reputation Score" — slider from 0 to 100, current value shown in blue circle above handle, default 0. Marks at 0, 25, 50, 75, 100.
+- "Task Deadline" — radio button options: "12 hours", "24 hours" (selected by default, blue), "48 hours", "72 hours"
+- "← Back" + "Next →" buttons
 
-Step 4 — Set Budget:
+**Step 4 — Set Budget:**
 - Heading: "Set your campaign budget"
-- "Reward per task": input field with TASK suffix, default 100
-- "Number of tasks": input field, default 50
-- Live calculation box below:
-  - "Worker rewards: 5,000 TASK (100 × 50)"
-  - "Platform fee (20%): 1,250 TASK"
-  - "Total campaign cost: 6,250 TASK" — large, bold
-  - "Your balance: 50,000 TASK" — shows if sufficient (green) or insufficient (red)
-- "Next" button, "Back" button
+- "Reward Per Task" — number input with "TASK" suffix label, default 100, stepper buttons +/-
+- "Number of Tasks" — number input, default 50, stepper buttons
+- Live calculation card below (glass card, blue border):
+  - Line 1: "Worker Rewards:" — "5,000 TASK" right-aligned — "(100 × 50)" small text
+  - Line 2: "Platform Fee (20%):" — "1,250 TASK"
+  - Divider line
+  - Line 3 bold: "Total Campaign Cost:" — "6,250 TASK" in 24px bold blue
+  - Line 4: "Your Balance:" — "50,000 TASK" in green — green CheckCircle icon — "(Sufficient)" green text
+  - (If balance insufficient: red text "Insufficient balance — deposit more TASK" with "Deposit" link)
+- "← Back" + "Next →" buttons
 
-Step 5 — Review & Launch:
+**Step 5 — Review & Launch:**
 - Heading: "Review Your Campaign"
-- Summary card showing all selections: platforms (icons), content preview, requirements, budget breakdown
-- Checkbox: "I confirm this campaign follows TaskCoins guidelines"
-- "Launch Campaign" large blue button with rocket icon
-- "Back" button
-- On launch: success modal with confetti animation, "Your campaign is now live! Chillers will start completing tasks immediately."
+- Summary card (glass, large padding):
+  - "Platforms:" row with selected platform icons/badges
+  - "Content Preview:" first 3 lines of content text + "Show full content" toggle
+  - "Image:" thumbnail preview (or "No image")
+  - "Requirements:" "Gold+ | 50+ reputation | 24h deadline"
+  - "Budget:" "100 TASK × 50 tasks = 5,000 TASK + 1,250 fee = 6,250 TASK total"
+  - Divider
+  - Checkbox: "I confirm this campaign follows TaskCoins community guidelines"
+- "← Back" gray button, "Launch Campaign 🚀" large blue button with glow effect
+- On click: success overlay/modal — confetti animation, green check circle, "Your campaign is now live!", "Chillers will start completing tasks immediately.", "View Campaign" button + "Create Another" link
 
 ---
 
-PAGE 8: REVIEW PROOFS (route: /dashboard/advertiser/review)
+## PAGE 8: REVIEW PROOFS (/dashboard/advertiser/review)
 
-- Heading: "Review Proof Submissions"
-- Filter: dropdown to filter by campaign
-- Queue of proof cards (stacked list):
-  Each card shows:
-  - Left: Chiller avatar, username, level badge, reputation score
-  - Center: screenshot thumbnail (click to expand in lightbox/modal showing full image), posted link (clickable, opens in new tab)
-  - Right: two large buttons — "Approve" (green with check icon) and "Reject" (red with X icon)
-  - If reject clicked: text input appears "Reason for rejection" + "Confirm Reject" button
-  - Timestamp: "Submitted 2 hours ago"
-  - Platform icon badge
-- Pre-populate with 8 sample submissions with placeholder screenshots
-- Top stats bar: "12 Pending Review" | "847 Approved" | "23 Rejected"
+- Heading: "Review Proof Submissions" — 28px
+- Stats bar: "12 Pending" yellow badge | "847 Approved" green badge | "23 Rejected" red badge
+- Filter dropdown: "All Campaigns" | "Launch $TOKEN on X" | "Reddit AMA" | "CMC Push"
 
----
+Proof submission queue — 8 cards stacked vertically:
+Each card (glass, rounded-2xl, padding 20px):
+- Left section (30%): Chiller avatar circle + username bold + level badge (Gold/Silver/etc) + reputation "87/100" small text + "Member since Jan 2026" tiny text
+- Center section (40%):
+  - Screenshot thumbnail (placeholder image, ~200x150px) — click opens lightbox/modal showing full-size image
+  - Below screenshot: link text "https://x.com/cryptoking/status/1234..." — blue, clickable, ExternalLink icon
+  - "Submitted 2 hours ago" — #9CA3AF small text
+  - Platform badge: "X (Twitter)" blue badge
+- Right section (30%):
+  - "Approve" large green button (CheckCircle icon + "Approve" text)
+  - "Reject" large red outline button (XCircle icon + "Reject" text)
+  - When Reject is clicked: text input slides down "Reason for rejection" + "Confirm Reject" small red button
 
-PAGE 9: WALLET (route: /dashboard/wallet)
-
-Large balance display at top center:
-- Token icon + "8,450 TASK" in large text (48px)
-- USD equivalent below in gray: "≈ $845.00"
-- Two action buttons below: "Deposit" and "Withdraw"
-
-Two tabs: Deposit | Withdraw
-
-Deposit tab:
-- "Connect your wallet to deposit TASK tokens"
-- "Connect Wallet" button (MetaMask icon) — mock connection
-- After "connected": shows wallet address truncated, input field "Amount to deposit" with MAX button, "Deposit" blue button
-- Info text: "Deposits are confirmed after 12 block confirmations (~3 minutes)"
-
-Withdraw tab:
-- Shows current withdrawal tier with visual progress:
-  - If new account: large yellow banner "Withdrawals unlock after 30 days of activity" with countdown timer showing "22 days 14 hours remaining"
-  - Progress bar showing account warming: 0-30 days (locked) → 30-60 days (monthly) → 60+ days (bi-weekly) → VIP (weekly)
-  - Current tier highlighted
-- Withdrawal rules displayed in a clean table:
-  - New (0-30 days): No withdrawals
-  - Warmed (30-60 days): Once per month, minimum 500 TASK
-  - Trusted (60+ days, reputation 70+): Bi-weekly, minimum 200 TASK
-  - VIP (Diamond+, reputation 90+): Weekly, minimum 100 TASK
-- If eligible: input field "Amount to withdraw" + wallet address field + "Request Withdrawal" button
-- Blue banner at bottom: "TaskCoins is designed for long-term growth. The longer you hold, the more your earnings are worth. Hold for 100x."
-
-Transaction History section below:
-- Table with columns: Date, Type (with colored badges: green "Earned", blue "Deposited", orange "Withdrawn", purple "Staked", yellow "Referral Bonus"), Amount (+ green or - red), Status (Completed/Pending/Failed badges)
-- Pre-populate with 20 sample transactions
-- Pagination at bottom
+Sample submissions with varied Chillers, platforms, and timestamps.
 
 ---
 
-PAGE 10: STAKING (route: /dashboard/chiller/staking)
+## PAGE 9: WALLET (/dashboard/wallet)
 
-Hero: "Stake TaskCoins — Unlock Premium Rewards" with blue glow effect
+**Balance hero section (centered, padding 48px):**
+- Small "Your Balance" label in #9CA3AF
+- Large token display: blue coin icon + "8,450 TASK" in 48px Satoshi bold white
+- USD equivalent: "≈ $845.00" in 20px #9CA3AF
+- Two buttons below, side by side: "Deposit" (primary blue, ArrowDown icon) | "Withdraw" (secondary outline, ArrowUp icon)
 
-Current staking status card:
-- "Currently Staked: 5,000 TASK"
-- "Current Tier: Tier 2"
-- "Active Benefit: 5% bonus on all earnings"
-- If nothing staked: "You haven't staked any TaskCoins yet. Stake now to unlock premium benefits."
+**Two tabs below: "Deposit" | "Withdraw"**
 
-4 tier cards in a row (scrollable on mobile):
-- Tier 1: "1,000 TASK" — star icon — "Access premium tasks" — if unlocked: blue glow border, if locked: dimmed with lock icon
-- Tier 2: "5,000 TASK" — trending-up icon — "5% bonus on all earnings" — highlighted as current
-- Tier 3: "10,000 TASK" — lightning icon — "10% bonus + early access" — locked, dimmed
-- Tier 4: "50,000 TASK" — crown icon — "VIP + direct advertiser offers" — locked, dimmed
+**Deposit tab:**
+- Glass card with:
+  - Heading: "Deposit TaskCoins to Your Account"
+  - Step 1: "Connect your wallet" — "Connect MetaMask" button (outline, MetaMask fox icon) — when "connected": green check + "0x4f2...8a3 Connected" text
+  - Step 2: "Enter amount" — number input with "TASK" suffix + "MAX" small blue button
+  - Step 3: "Confirm deposit" — "Deposit TASK" primary blue button (full width)
+  - Info box: blue border, info icon, "Deposits are confirmed after 12 block confirmations (~3 minutes). Gas fees apply."
 
-Stake section:
-- Input: "Amount to stake" with TASK label and "MAX" button
-- "Available balance: 8,450 TASK" shown below input
-- "Stake Now" blue button
+**Withdraw tab:**
+- Glass card with:
+  - **Withdrawal Tier Progress** (visual, this is important):
+    - Horizontal progress bar with 4 stages labeled:
+      - Stage 1: "New (0-30 days)" — red/locked icon — "No withdrawals"
+      - Stage 2: "Warmed (30-60 days)" — orange — "Monthly, min 500 TASK"
+      - Stage 3: "Trusted (60+ days)" — green — "Bi-weekly, min 200 TASK"
+      - Stage 4: "VIP (Diamond+)" — blue/purple with star — "Weekly, min 100 TASK"
+    - Current tier highlighted with glow effect
+    - If new account: large yellow warning banner: "⚠ Withdrawals unlock after 30 days of activity" with countdown: "22 days 14 hours remaining" and progress bar showing days elapsed
+  - Tier rules table (glass card):
+    - 4 rows: Account Status | Withdrawal Frequency | Minimum Amount | Requirements
+    - New (0-30 days) | Locked | — | Complete 30 days of activity
+    - Warmed (30-60 days) | Once per month | 500 TASK | 30+ days active
+    - Trusted (60+ days) | Bi-weekly | 200 TASK | 60+ days + 70+ reputation
+    - VIP | Weekly | 100 TASK | Diamond+ level + 90+ reputation
+    - Current tier row highlighted with blue border
+  - If eligible: "Amount to withdraw" number input + "Wallet address" text input (placeholder "0x...") + "Request Withdrawal" primary button
+  - Blue info banner at bottom: Wallet icon, "TaskCoins is designed for long-term growth. The longer you hold, the more your earnings are worth. Workers who held from Day 1 saw their tokens grow 10x. Hold for 100x. 💎"
 
-Unstake section:
-- Input: "Amount to unstake"
-- Warning text in orange: "Unstaking has a 7-day cooldown. Your benefits remain active during the cooldown period."
-- "Request Unstake" outline button
-
-Staking history table:
-- Date, Action (Staked/Unstaked), Amount, Status
-- Pre-populate with 5 entries
-
----
-
-PAGE 11: LEADERBOARD (route: /leaderboard)
-
-Hero: "Top Chillers — Compete, Climb, Earn" centered
-
-Time filter tabs: This Week | This Month | All Time (default: This Month)
-Category tabs: Most Tasks | Most Earned | Best Reputation | Most Referrals
-
-Rankings table (full width):
-- Columns: Rank #, Avatar, Username, Level (badge), Tasks Completed, TASK Earned, Reputation, Platforms (small icons)
-- Row 1: gold background tint, large rank "#1" — "CryptoKing" — Legend badge — 1,247 tasks — 89,400 TASK — 98 — X/Reddit/CMC icons
-- Row 2: silver background tint — "#2"
-- Row 3: bronze background tint — "#3"
-- Rows 4-50: normal dark styling
-- Pre-populate with 50 users with varied data
-
-Sticky bar at bottom of viewport:
-- "Your Rank: #47 — Complete 14 more tasks to reach #40" with progress indicator
-- Blue background, fixed to bottom
+**Transaction History section below:**
+- Heading: "Transaction History" + "Export CSV" small link
+- Table (glass card, rounded-2xl):
+  - Columns: Date | Type | Amount | Status
+  - Type badges: green "Earned", blue "Deposited", orange "Withdrawn", purple "Staked", cyan "Referral Bonus", gray "Platform Fee"
+  - Amount: green "+200 TASK" for earnings, red "-500 TASK" for withdrawals
+  - Status badges: green "Completed", yellow "Pending", red "Failed"
+  - 20 sample rows with varied types, dates (last 30 days), and amounts
+  - Pagination: "← Previous | Page 1 of 3 | Next →"
 
 ---
 
-PAGE 12: REFERRAL (route: /dashboard/chiller/referrals)
+## PAGE 10: STAKING (/dashboard/chiller/staking)
 
-Hero: "Invite Friends. Earn 5% of Everything They Make — Forever." white heading, blue "Forever"
+- Hero: "Stake TaskCoins" in 32px Satoshi bold, "Unlock premium rewards and higher-paying tasks" in #9CA3AF — subtle blue glow effect behind text
 
-Referral link box:
-- Large display: "https://taskcoins.io/ref/ABC123XYZ" in a bordered box
-- "Copy Link" blue button (shows "Copied!" for 2 seconds after click)
-- Share buttons row: X icon, Telegram icon, WhatsApp icon, Email icon — each opens share intent
+**Current Status card (glass, blue border if staking active):**
+- If staking: "Currently Staked: 5,000 TASK" in 24px bold, "Current Tier: Tier 2" with TrendingUp icon, "Active Benefit: 5% bonus on all earnings" in green
+- If not staking: "You haven't staked any TaskCoins yet." in #9CA3AF, "Stake now to unlock premium benefits and earn more from every task." subtext
 
-Stats cards (3 in a row):
-- "Total Referrals" — "12"
-- "Active Referrals" — "8" (completed at least 1 task)
-- "Total Referral Earnings" — "3,240 TASK"
+**Tier cards (4 in a row, scrollable on mobile):**
+Each card (glass, rounded-2xl, tall, centered content):
+- Tier 1: Star icon in blue circle, "Tier 1" label, "1,000 TASK" in 24px bold, "Access premium task queue" description, if unlocked: blue glow border "Active", if locked: dimmed with Lock icon overlay
+- Tier 2: TrendingUp icon in green circle, "Tier 2", "5,000 TASK", "5% bonus on all earnings", currently active: green glow border "Current Tier ✓"
+- Tier 3: Zap icon in purple circle, "Tier 3", "10,000 TASK", "10% bonus + early access to new campaigns", locked: dimmed, "5,000 more TASK needed"
+- Tier 4: Crown icon in gold circle, "Tier 4", "50,000 TASK", "VIP status + direct advertiser offers", locked: dimmed, "45,000 more TASK needed"
 
-Referral table:
-- Columns: Avatar, Username, Signed Up, Their Tasks Completed, Your Earnings From Them
-- Pre-populate with 8 referrals at various activity levels
-- Some active (green dot), some inactive (gray dot)
+**Stake/Unstake section (two glass cards side by side, stacked on mobile):**
 
-How It Works section at bottom:
-- 3 steps with icons:
-  1. Share icon — "Share your unique referral link"
-  2. User-check icon — "They sign up and start completing tasks"
-  3. Coins icon — "You earn 5% of their earnings — forever (paid from platform fee, NOT from their pay)"
+Left card — "Stake":
+- "Amount to Stake" number input with TASK suffix + "MAX" button
+- "Available: 8,450 TASK" text below input
+- "Stake Now" primary blue button full width
+- Small text: "Staked tokens are locked until you request unstaking."
 
----
+Right card — "Unstake":
+- "Amount to Unstake" number input with TASK suffix + "MAX" button
+- "Currently Staked: 5,000 TASK" text below
+- "Request Unstake" secondary outline button full width
+- Warning box: orange border, AlertTriangle icon, "Unstaking has a 7-day cooldown period. Your tier benefits remain active during the cooldown. After 7 days, tokens return to your available balance."
 
-PAGE 13: UNIVERSITY (route: /university)
-
-Hero: "TaskCoins University" heading, "Learn, Grow, Earn More" subheading
-
-Course grid (3 columns desktop, 1 mobile):
-6 course cards, each with:
-- Thumbnail placeholder (gradient background with topic icon)
-- Title
-- Difficulty badge: green "Beginner", orange "Intermediate", red "Advanced"
-- Stats: "8 lessons • 45 min"
-- "Start Course" blue button
-
-Courses:
-1. "How to Grow Your X Account from 0 to 10K" — Beginner — 8 lessons — 45 min — thumbnail: X logo on blue gradient
-2. "Reddit Karma Building: The Complete Guide" — Beginner — 6 lessons — 30 min — Reddit logo on orange gradient
-3. "YouTube Channel Growth for Beginners" — Intermediate — 10 lessons — 60 min — YouTube logo on red gradient
-4. "Maximize Your TaskCoins Earnings" — Beginner — 5 lessons — 20 min — TaskCoins logo on blue gradient
-5. "Crypto Basics: Wallets, Tokens, and DeFi" — Beginner — 7 lessons — 35 min — wallet icon on purple gradient
-6. "How to Use MetaMask Like a Pro" — Beginner — 4 lessons — 15 min — MetaMask fox on orange gradient
-
-Click a course → Course detail page:
-- Course header: title, difficulty, "4/8 lessons completed" progress bar
-- Left sidebar: lesson list with checkmarks for completed, highlight current
-- Main area: lesson content (placeholder paragraphs), video embed placeholder (gray box with play icon), "Mark as Complete" green button, "Next Lesson" blue button
+**Staking History table (glass card):**
+- Columns: Date | Action | Amount | Tier Change | Status
+- 5 sample rows:
+  - Mar 5, 2026 | Staked | +5,000 TASK | Tier 1 → Tier 2 | Completed
+  - Feb 28, 2026 | Staked | +1,000 TASK | None → Tier 1 | Completed
+  - Feb 20, 2026 | Unstaked | -500 TASK | (partial) | Completed
+  - Feb 15, 2026 | Staked | +1,500 TASK | None → Tier 1 | Completed
+  - Feb 10, 2026 | Staked | +500 TASK | — | Completed
 
 ---
 
-PAGE 14: SERVICES (route: /services)
+## PAGE 11: LEADERBOARD (/leaderboard)
 
-Hero: "Web3 Services — Built by the Team Behind Pepeto" heading, "End-to-end crypto solutions from a team that's done it." subheading
+- Hero: "Leaderboard" 36px Satoshi bold centered, "Top Chillers — Compete, Climb, Earn" 18px #9CA3AF
 
-Service cards (2 columns desktop, 1 mobile):
-Each card has: icon, title, description, starting price, "Request Quote" button
+**Time toggle:** "This Week" | "This Month" (active, blue) | "All Time" — pill buttons
+**Category toggle:** "Most Tasks" (active) | "Most Earned" | "Best Reputation" | "Most Referrals" — tab buttons with underline
 
-1. Document icon — "PR Writing" — "Professional crypto press releases distributed to major outlets" — "From 5,000 TASK"
-2. Play icon — "YouTuber Promotion" — "Get featured by crypto YouTubers with 50K-200K subscribers" — "From 10,000 TASK"
-3. Newspaper icon — "Distribution on Outlets" — "Get published on CoinDesk, CoinTelegraph, and major crypto news sites" — "From 25,000 TASK"
-4. Code icon — "dApp Creation" — "Smart contract development + frontend for your Web3 project" — "From 50,000 TASK"
-5. Rocket icon — "Token Launch" — "ERC-20/BEP-20 token creation + Uniswap listing assistance" — "From 30,000 TASK"
-6. Image icon — "NFT Development" — "Collection creation, minting page, marketplace listing" — "From 20,000 TASK"
-7. Shield icon — "Smart Contract Audit" — "Security audit for your existing smart contracts" — "From 15,000 TASK"
-8. Lightbulb icon — "Web3 Consulting" — "Tokenomics, go-to-market strategy, community building advisory" — "From 10,000 TASK"
+**Top 3 podium section (visual, above the table):**
+- Three cards in a row, center one (#1) slightly larger/elevated:
+  - #1 (center, gold): large gold crown icon, avatar circle, "CryptoKing" bold 20px, "Legend" badge with purple glow, "1,247 tasks" stat, "89,400 TASK earned", gold background tint card
+  - #2 (left, silver): silver medal, avatar, "DefiQueen" bold, "Diamond" badge, "1,102 tasks", "76,200 TASK", silver tint
+  - #3 (right, bronze): bronze medal, avatar, "Web3Wizard" bold, "Diamond" badge, "987 tasks", "68,500 TASK", bronze tint
 
-"Request Quote" opens modal form: Name, Email, Project URL, Budget dropdown (5K-10K / 10K-25K / 25K-50K / 50K+ TASK), Description textarea, "Submit Request" button
+**Rankings table (glass card, below podium):**
+- Columns: Rank | User | Level | Tasks | TASK Earned | Reputation | Platforms
+- Rows 4-50 with sample data, each row:
+  - Rank number (#4, #5...) in #9CA3AF
+  - Avatar circle + username — bold white
+  - Level badge colored (Bronze/Silver/Gold/Diamond)
+  - Tasks completed number
+  - TASK earned with green color
+  - Reputation score /100
+  - Small platform icons (X, Reddit, CMC etc.) showing which platforms they're active on
+- Alternate row backgrounds for readability (subtle)
+- Pre-populate with 50 users (rows 4-50 after the podium shows 1-3), realistic varied data
 
-Why Choose Us section:
-- 3 cards: "Proven Team" (Pepeto track record), "End-to-End" (from token creation to marketing), "Results-Driven" (real metrics, not empty promises)
-
----
-
-PAGE 15: BLOG (route: /blog)
-
-Featured post hero: large card at top with gradient overlay on placeholder image, title, excerpt, date, "Read More" button
-
-Post grid below (3 columns desktop, 1 mobile):
-- Category filter bar: All, News, Updates, Partnerships, Guides, Community
-
-3 placeholder posts:
-1. "TaskCoins Launches: The Future of Social Media Earning" — News — March 8, 2026 — 5 min read — placeholder image
-2. "How 300 Chillers Earned Their First TaskCoins" — Community — March 7, 2026 — 3 min read
-3. "TaskCoins Tokenomics Explained: Why We Built a Utility Token" — Guides — March 6, 2026 — 7 min read
-
-Each card: image, title, excerpt (2 lines), date, category badge, read time
-
-Individual post page (route: /blog/:slug):
-- Hero image, title (large), author avatar + name + date, content area with 5 placeholder paragraphs, share buttons (X, Telegram, copy link), "Related Posts" section with 2 cards at bottom
+**Sticky bottom bar (fixed to viewport bottom, blue bg):**
+- "Your Rank: #47" left side, "Complete 14 more tasks to reach #40" center, small progress bar right
 
 ---
 
-PAGE 16: WHITEPAPER (route: /whitepaper)
+## PAGE 12: REFERRALS (/dashboard/chiller/referrals)
 
-Clean document reading layout on dark background.
+- Heading: "Referral Program" 32px, "Invite Friends. Earn 5% of Everything They Make —" then "Forever." in #388EFF — 20px subheading
 
-Sticky sidebar table of contents (desktop, collapses to dropdown on mobile):
-1. Abstract
-2. Problem Statement
-3. The TaskCoins Solution
-4. Platform Architecture
-5. Token Utility
-6. Tokenomics
-7. Token Allocation
-8. Platform Fee Model
-9. Burn Mechanism
-10. Staking Model
-11. Governance Roadmap
-12. Team
-13. Legal Disclaimer
+**Referral Link section (glass card, blue border, padding 32px):**
+- "Your Referral Link" label
+- Large display box: "https://taskcoins.io/ref/AHMED2024" in monospace 18px white, glass background
+- Buttons row: "Copy Link" blue button (Copy icon — shows "Copied! ✓" for 2 sec after click) | Share icons: X, Telegram, WhatsApp, Email — each in small circle buttons
 
-Clicking a TOC item smooth-scrolls to that section.
+**Stats row (3 glass cards):**
+- Card 1: Users icon in blue circle, "Total Referrals" #9CA3AF, "12" in 32px bold
+- Card 2: UserCheck icon in green circle, "Active Referrals" label, "8" in 32px bold, "(completed 1+ task)" small text
+- Card 3: Wallet icon in green circle, "Referral Earnings" label, "3,240 TASK" in 32px bold green, "≈ $324.00" small text
 
-"Download PDF" button in the top right corner.
+**Referral table (glass card):**
+- Columns: User | Joined | Their Tasks | Their Status | Your Earnings
+- 8 rows:
+  - Avatar + "maria_r" | Mar 2, 2026 | 47 tasks | green dot "Active" | +620 TASK
+  - Avatar + "carlos_crypto" | Feb 28, 2026 | 82 tasks | green "Active" | +1,140 TASK
+  - Avatar + "web3kid" | Feb 25, 2026 | 23 tasks | green "Active" | +280 TASK
+  - Avatar + "nft_lover" | Feb 20, 2026 | 56 tasks | green "Active" | +670 TASK
+  - Avatar + "defi_sarah" | Feb 15, 2026 | 31 tasks | green "Active" | +390 TASK
+  - Avatar + "trader_mo" | Feb 10, 2026 | 5 tasks | yellow "New" | +40 TASK
+  - Avatar + "hodl_king" | Feb 5, 2026 | 12 tasks | green "Active" | +100 TASK
+  - Avatar + "moon_boy" | Jan 30, 2026 | 0 tasks | gray "Inactive" | +0 TASK
 
-Content for each section (write 3-5 sentences per section as placeholder):
-
-Section 6 — Tokenomics: prominently display "Total Supply: 590,000,000 TASK" in a highlighted box. Network: Ethereum ERC-20. No on-chain tax.
-
-Section 7 — Token Allocation: animated donut chart with: Uniswap Liquidity 30% (blue), Platform Treasury 25% (green), Team 15% (orange, "12-month vesting"), Community Airdrop 10% (purple), Marketing 10% (yellow), Staking Rewards 10% (cyan). Legend next to chart with token amounts.
-
-Section 8 — Platform Fee Model: visual flow diagram showing: "Advertiser pays 1,000 TASK → 800 TASK to Workers (80%) → 200 TASK to Platform (20%)" with arrows and boxes.
-
-Section 9 — Burn Mechanism: "5% of platform fees burned quarterly" with example: "Q1 fees: 1,000,000 TASK → 50,000 TASK burned" and fire icon.
-
-Typography: large section headings in Satoshi bold, body in Inter, generous line height (1.8) for readability.
+**How It Works section (3 cards in a row at bottom):**
+- Card 1: Share2 icon in blue, "Share Your Link", "Send your unique referral link to friends via social media, messaging, or email."
+- Card 2: UserPlus icon in green, "They Sign Up & Earn", "Your friends create an account and start completing tasks to earn TaskCoins."
+- Card 3: Coins icon in gold, "You Earn 5% — Forever", "Every time your referral earns TaskCoins, 5% is automatically credited to you. This comes from the platform fee — their earnings are never reduced."
 
 ---
 
-PAGE 17: ROADMAP (route: /roadmap)
+## PAGE 13: UNIVERSITY (/university)
 
-Vertical timeline design. On desktop: alternating left/right cards connected by a vertical line with dots. On mobile: single column.
+- Hero: "TaskCoins University" 36px Satoshi bold, "Learn how to grow your accounts and maximize your earnings" 18px #9CA3AF, BookOpen icon in blue
 
-Status dot indicators: completed = green dot + checkmark, in progress = blue pulsing/glowing dot, upcoming = gray dot.
+**Course grid (3 columns desktop, 1 mobile):**
+6 course cards, each (glass card, rounded-2xl, overflow-hidden):
+- Top: gradient thumbnail area (200px tall) with large icon centered:
+  - Course 1: Blue gradient (#1DA1F2 to #0A66C2) with large X logo, title overlay at bottom "How to Grow Your X Account from 0 to 10K"
+  - Course 2: Orange gradient (#FF4500 to #FF6B35) with Reddit icon, "Reddit Karma Building: The Complete Guide"
+  - Course 3: Red gradient (#FF0000 to #CC0000) with YouTube icon, "YouTube Channel Growth for Beginners"
+  - Course 4: Blue gradient (#388EFF to #2563EB) with TaskCoins icon, "Maximize Your TaskCoins Earnings"
+  - Course 5: Purple gradient (#8B5CF6 to #6D28D9) with Wallet icon, "Crypto Basics: Wallets, Tokens, and DeFi"
+  - Course 6: Orange gradient (#F6851B to #E2761B) with fox icon, "How to Use MetaMask Like a Pro"
+- Bottom section (padding 20px):
+  - Difficulty badge: green "Beginner" or orange "Intermediate"
+  - Stats: "8 lessons • 45 min" with BookOpen + Clock icons
+  - "Start Course" blue button full width
 
-Phase 1 — Launch (Month 1) — Status: IN PROGRESS (blue pulse):
-- Token deployment on Ethereum
-- Uniswap liquidity pool live
-- Platform beta launch
-- First 300 Chillers onboarded
-- CoinMarketCap + CoinGecko listing applications
-
-Phase 2 — Growth (Month 2-3) — Status: UPCOMING (gray):
-- CEX listing (MEXC / LBank)
-- University launch with first courses
-- 1,000 active Chillers
-- Anti-cheat verification system v1
-- Advertiser onboarding campaign
-
-Phase 3 — Scale (Month 4-6) — Status: UPCOMING:
-- Mobile Progressive Web App
-- Services marketplace live
-- Staking system launch
-- 5,000 active Chillers
-- First quarterly token burn
-
-Phase 4 — Expand (Month 6-12) — Status: UPCOMING:
-- Multi-language support (Arabic, Spanish, Turkish, Indonesian, Russian, Portuguese)
-- Advertiser API for programmatic campaigns
-- Governance voting for token holders
-- 20,000 active Chillers
-
-Phase 5 — Ecosystem (Year 2) — Status: UPCOMING:
-- Native mobile apps (iOS + Android)
-- Additional CEX listings
-- DAO governance
-- 100,000 active Chillers
-- Global expansion
-
-Subtle scroll animation: timeline line fills in with blue color as user scrolls down.
+**Click a course → Course page:**
+- Header: course title 28px, difficulty badge, "4/8 lessons completed" progress bar green
+- Two-column layout:
+  - Left sidebar (250px): lesson list, numbered, each with title, checkmark if completed (green check), current lesson highlighted blue
+    - Lesson 1: "Introduction to X" ✓ completed
+    - Lesson 2: "Setting Up Your Profile" ✓ completed
+    - Lesson 3: "Content Strategy" ✓ completed
+    - Lesson 4: "Hashtag Research" ← Current (blue highlight)
+    - Lesson 5: "Engagement Tactics" (locked, gray)
+    - Lesson 6: "Growth Hacking" (locked)
+    - Lesson 7: "Analytics & Optimization" (locked)
+    - Lesson 8: "Monetization" (locked)
+  - Main content area:
+    - Lesson title: "Lesson 4: Hashtag Research" 24px
+    - Video placeholder: dark box 16:9 ratio with Play circle icon centered, "Video lesson coming soon" text
+    - Lesson content: 4 paragraphs of placeholder text about the topic, formatted with headings, bullet points
+    - "Mark as Complete" green button
+    - Navigation: "← Previous Lesson" | "Next Lesson →" buttons
 
 ---
 
-PAGE 18: PROOF GALLERY (route: /proof-gallery)
+## PAGE 14: SERVICES (/services)
+
+- Hero: "Web3 Services" 36px Satoshi bold, "Built by the team behind Pepeto. End-to-end crypto solutions." 18px #9CA3AF
+- Small badges in a row: "Trusted Team" green, "50+ Projects Delivered" blue, "Since 2024" purple
+
+**Service cards (2 columns desktop, 1 mobile), 8 cards total:**
+Each card (glass, rounded-2xl, padding 28px, hover:border-blue-500/30):
+- Icon in colored circle (48px) at top
+- Title in 20px bold below
+- Description in 15px #9CA3AF (2-3 sentences)
+- Price: "Starting from X TASK" in #388EFF bold
+- "Request Quote" button (secondary outline, full width at bottom)
+
+Cards:
+1. FileText icon / blue circle — "PR Writing" — "Professional crypto press releases written by experienced blockchain journalists. Distributed to major outlets including CoinDesk, CoinTelegraph, and Bitcoin Magazine. Includes SEO optimization and keyword targeting." — "From 5,000 TASK"
+2. Play icon / red circle — "YouTuber Promotion" — "Get your project featured by established crypto YouTubers with 50K-200K subscribers. We handle outreach, scripting guidance, and performance tracking. Average 50K+ views per feature." — "From 10,000 TASK"
+3. Globe icon / green circle — "Distribution on Outlets" — "Get your news published on CoinDesk, CoinTelegraph, Bitcoin Magazine, Decrypt, and 20+ tier-1 crypto news outlets. We have direct relationships with editorial teams." — "From 25,000 TASK"
+4. Code icon / purple circle — "dApp Creation" — "Full smart contract development plus frontend UI for your Web3 project. Includes Solidity/Vyper contracts, testing, deployment, and a React/Next.js frontend with wallet integration." — "From 50,000 TASK"
+5. Rocket icon / orange circle — "Token Launch" — "End-to-end ERC-20 or BEP-20 token creation, deployment, and Uniswap/PancakeSwap listing. Includes tokenomics design, contract audit, and liquidity setup." — "From 30,000 TASK"
+6. Image icon / pink circle — "NFT Development" — "NFT collection creation with generative art engine, ERC-721/1155 smart contract, custom minting page, and marketplace listing on OpenSea and Blur." — "From 20,000 TASK"
+7. Shield icon / cyan circle — "Smart Contract Audit" — "Comprehensive security audit for your existing smart contracts. Includes vulnerability assessment, gas optimization recommendations, and a detailed PDF report." — "From 15,000 TASK"
+8. Lightbulb icon / yellow circle — "Web3 Consulting" — "Strategic advisory on tokenomics design, go-to-market strategy, community building, and investor relations. Led by founders who launched Pepeto to a $50M+ market cap." — "From 10,000 TASK"
+
+**"Request Quote" modal (opens on button click):**
+- Overlay with glass card, 500px max-width
+- Heading: "Request a Quote" 24px
+- Form fields: Name, Email, Project URL (optional), Service Type (pre-filled from card clicked), Budget dropdown ("5K-10K TASK" / "10K-25K" / "25K-50K" / "50K-100K" / "100K+"), Description textarea (placeholder "Tell us about your project and what you need...")
+- "Submit Request" blue button + "Cancel" link
+- On submit: success message "Your request has been submitted. We'll get back to you within 24 hours."
+
+**Why Choose Us section (3 cards at bottom):**
+- Card 1: Award icon, "Proven Team", "The team behind Pepeto — launched and scaled to $50M+ market cap. We've done it ourselves, so we know what works."
+- Card 2: Zap icon, "End-to-End", "From token creation to marketing to community building. One team handles everything — no need to coordinate 5 different agencies."
+- Card 3: BarChart3 icon, "Results-Driven", "We measure everything. Real metrics, real ROI, real proof. No vanity metrics, no empty promises."
+
+---
+
+## PAGE 15: BLOG (/blog)
+
+- Hero section: Featured post as a large card (full width, 400px tall):
+  - Gradient placeholder image background
+  - Dark overlay gradient from bottom
+  - Category badge "News" in blue, top-left
+  - Title: "TaskCoins Launches: The Future of Social Media Earning" in 32px bold white, bottom-left
+  - Excerpt: "The platform that pays you to post on social media is officially live. Here's everything you need to know about TaskCoins." in 16px white/80
+  - "Read More →" blue link, bottom-right
+  - Date: "March 8, 2026" + "5 min read" bottom-left below title
+
+- Category filter bar below hero: "All" (active/blue) | "News" | "Updates" | "Partnerships" | "Guides" | "Community" — horizontal scroll on mobile
+
+- Post grid (3 columns desktop, 1 mobile), 3 posts:
+  - Post card 1: placeholder image (blue gradient), "News" badge, "TaskCoins Launches: The Future of Social Media Earning", excerpt 2 lines, "March 8, 2026 • 5 min read", Read More link
+  - Post card 2: placeholder (green gradient), "Community" badge, "How 300 Chillers Earned Their First TaskCoins", excerpt, "March 7, 2026 • 3 min read"
+  - Post card 3: placeholder (purple gradient), "Guides" badge, "TaskCoins Tokenomics Explained: Why We Built a Utility Token", excerpt, "March 6, 2026 • 7 min read"
+
+**Individual blog post page (/blog/:slug):**
+- Hero image (full width, 300px, gradient placeholder)
+- Title: 36px Satoshi bold
+- Meta row: avatar circle + "TaskCoins Team" + "March 8, 2026" + "5 min read" + category badge
+- Content area (max-width 720px, centered):
+  - 5 paragraphs of placeholder text, formatted with:
+    - Heading 2s in 24px Satoshi
+    - Body text in 16px Inter, line-height 1.8, #E5E7EB
+    - A blockquote styled with blue left border
+    - A bullet list
+- Share buttons bar: "Share this article:" + X icon + Telegram icon + Copy link icon
+- "Related Posts" section: 2 post cards from the blog grid
+
+---
+
+## PAGE 16: WHITEPAPER (/whitepaper)
+
+**Layout:** two-column on desktop — sticky sidebar (250px) left, content right. Single column on mobile with dropdown TOC.
+
+**Top bar:** "TaskCoins Whitepaper" 28px left, "Download PDF" button (secondary, Download icon) right
+
+**Sidebar — Table of Contents:**
+- Sticky, scrolls with page, highlights current section
+- Numbered list, each clickable (smooth scroll):
+  1. Abstract
+  2. Problem Statement
+  3. The TaskCoins Solution
+  4. Platform Architecture
+  5. Token Utility
+  6. Tokenomics
+  7. Token Allocation
+  8. Platform Fee Model
+  9. Burn Mechanism
+  10. Staking Model
+  11. Governance Roadmap
+  12. Team
+  13. Legal Disclaimer
+- Active section: blue text + blue left border, others #9CA3AF
+
+**Content (max-width 800px, generous padding, readable typography):**
+Each section has a heading (28px Satoshi bold) + content (16px Inter, line-height 1.8, #D1D5DB):
+
+Section 1 — Abstract: "TaskCoins is a decentralized micro-task platform that connects advertisers with a global workforce of social media users. The platform is powered by TASK, an ERC-20 utility token on Ethereum. Advertisers purchase TASK tokens to fund campaigns, and Chillers (workers) earn TASK by completing social media distribution tasks. The platform charges a 20% fee on all campaigns, creating sustainable revenue without relying on token sales. This whitepaper outlines the platform architecture, tokenomics, and long-term vision for TaskCoins."
+
+Section 2 — Problem Statement: "The crypto marketing industry is broken. Projects spend millions on marketing agencies that deliver fake followers, bot engagement, and inflated metrics. There is no transparency, no verification, and no accountability. Meanwhile, billions of social media users around the world have real accounts and real audiences — but no way to monetize their social presence for micro-marketing tasks. TaskCoins solves both sides of this equation."
+
+Section 3 — The TaskCoins Solution: "TaskCoins provides a platform where advertisers can distribute content through real social media accounts with verified proof of every post. Chillers (workers) browse a task board, post content on their own accounts across X, Reddit, CoinMarketCap, Binance Square, YouTube, and Telegram, and submit screenshot proof. Every task is verified before payment is released. The result: advertisers get genuine distribution, and Chillers earn crypto for work they can do from their phone."
+
+Section 4 — Platform Architecture: "The platform consists of two primary account types: Advertisers and Chillers. Advertisers create campaigns by defining the content, selecting target platforms, setting reward amounts, and specifying requirements (minimum level, reputation score). Chillers browse available tasks, claim them, post the content on their social media accounts, and submit proof (screenshot + live post URL). An anti-cheat system verifies submissions before releasing payment."
+
+Section 5 — Token Utility: "TASK is the sole currency of the TaskCoins platform. It serves three primary functions: (1) Payment — advertisers must purchase TASK to fund campaigns, creating organic buy pressure. (2) Rewards — Chillers earn TASK for completing tasks, incentivizing participation. (3) Staking — Chillers can stake TASK to unlock premium features and earn bonus rewards, locking supply and reducing sell pressure."
+
+Section 6 — Tokenomics:
+- Highlighted box: "Total Supply: 590,000,000 TASK" in large text, blue border
+- "Network: Ethereum (ERC-20)"
+- "On-chain Tax: None — zero transfer fees on all transactions"
+- "The total supply mirrors Solana's circulating supply, providing familiar scale for crypto investors."
+
+Section 7 — Token Allocation:
+- Donut/pie chart (animated, colorful):
+  - 30% Uniswap Liquidity (blue) — 177,000,000 TASK — "Paired with ETH at launch"
+  - 25% Platform Treasury (green) — 147,500,000 TASK — "Operations, bonuses, burns"
+  - 15% Team (orange) — 88,500,000 TASK — "12-month vesting schedule"
+  - 10% Community Airdrop (purple) — 59,000,000 TASK — "First users and army members"
+  - 10% Marketing (yellow) — 59,000,000 TASK — "Listings, influencers, promotions"
+  - 10% Staking Rewards (cyan) — 59,000,000 TASK — "Distributed over 24 months"
+- Legend below with color dots, label, percentage, and token count
+
+Section 8 — Platform Fee Model:
+- Visual flow diagram (3 boxes connected by arrows):
+  - Box 1: "Advertiser pays 1,000 TASK" (blue border)
+  - Arrow → splits into two:
+  - Box 2: "800 TASK → Workers (80%)" (green border)
+  - Box 3: "200 TASK → Platform (20%)" (orange border)
+- "The 20% fee is applied off-chain at the platform level. The TASK token itself has no transfer tax. This keeps the token CEX-friendly and ensures holders and traders are never penalized."
+
+Section 9 — Burn Mechanism:
+- "Every quarter, 5% of the platform's accumulated fees are permanently burned."
+- Example box with Flame icon: "Q1 2026: Platform collects 1,000,000 TASK in fees → 50,000 TASK burned forever → Circulating supply decreases"
+- "All burn transactions are executed on-chain and publicly verifiable. Burns are announced on the TaskCoins blog and social channels."
+
+Section 10 — Staking Model: table of 4 tiers with amounts and benefits (same as staking page)
+
+Section 11 — Governance Roadmap: "Phase 1: Centralized governance (founding team). Phase 2: Community voting on platform features and fee adjustments (Month 6+). Phase 3: Full DAO governance with on-chain proposals and voting (Year 2+)."
+
+Section 12 — Team: "TaskCoins is built by the team behind Pepeto, a crypto project that achieved a $50M+ market cap. The team has experience in token launches, community building, PR distribution, and platform development. The team operates under KYC verification for CEX listing compliance."
+
+Section 13 — Legal Disclaimer: "TaskCoins (TASK) is a utility token. It is not a security, investment contract, or financial instrument. Purchasing TASK tokens does not represent equity, ownership, or profit-sharing rights in any entity. Users should conduct their own research and consult financial advisors before participating. Crypto assets are volatile and may lose value."
+
+---
+
+## PAGE 17: ROADMAP (/roadmap)
+
+- Hero: "Roadmap" 36px centered, "Our journey from launch to global adoption" 18px #9CA3AF
+
+**Vertical timeline:**
+- Center vertical line (2px, gradient from blue to gray going down)
+- Cards alternate left and right on desktop, all on one side (right of the line) on mobile
+- Each phase connected to the line by a horizontal connector + dot
+
+Phase 1 — Launch (Month 1) — BLUE PULSING DOT (in progress):
+- Glass card with blue left border
+- "Phase 1" small blue badge, "Launch" 24px bold, "Month 1" #9CA3AF
+- Checklist items:
+  - ○ Token deployment on Ethereum mainnet
+  - ○ Uniswap V2/V3 liquidity pool live
+  - ○ TaskCoins.io platform beta launch
+  - ○ First 300 Chillers onboarded (from existing army)
+  - ○ CoinMarketCap + CoinGecko listing applications
+  - ○ First self-funded campaigns live
+
+Phase 2 — Growth (Month 2-3) — GRAY DOT (upcoming):
+- Glass card, gray left border
+- Checklist:
+  - ○ CEX listing (MEXC / LBank)
+  - ○ University launch with first 6 courses
+  - ○ 1,000 active Chillers
+  - ○ Anti-cheat verification system v1
+  - ○ Advertiser onboarding campaign
+  - ○ First 10 external advertisers
+
+Phase 3 — Scale (Month 4-6) — GRAY:
+  - ○ Progressive Web App (mobile)
+  - ○ Services marketplace live
+  - ○ Staking system launch
+  - ○ 5,000 active Chillers
+  - ○ First quarterly token burn
+  - ○ Proof Gallery launch
+
+Phase 4 — Expand (Month 6-12) — GRAY:
+  - ○ Multi-language: Arabic, Spanish, Turkish, Indonesian, Russian, Portuguese
+  - ○ Advertiser API for programmatic campaigns
+  - ○ Governance voting for token holders
+  - ○ 20,000 active Chillers
+  - ○ Advertiser Marketplace launch
+  - ○ Advanced analytics dashboard
+
+Phase 5 — Ecosystem (Year 2) — GRAY:
+  - ○ Native mobile apps (iOS + Android)
+  - ○ Additional CEX listings (tier-1 exchanges)
+  - ○ Full DAO governance
+  - ○ 100,000 active Chillers
+  - ○ International expansion across 7+ languages
+  - ○ Enterprise advertiser partnerships
+
+Scroll animation: as user scrolls, the center line fills with blue color and dots light up.
+
+---
+
+## PAGE 18: PROOF GALLERY (/proof-gallery)
 
 Public page, no login required.
 
-Hero: "Real Tasks. Real Posts. Real Proof." heading. Subheading: "Every task on TaskCoins is verified with screenshot proof and live links."
+- Hero: "Proof Gallery" 36px, "Real Tasks. Real Posts. Real Proof." 18px #9CA3AF, "Every task on TaskCoins is verified. Here's the evidence." smaller text
 
-Filter bar: All Platforms | X | Reddit | CMC | Binance Square | YouTube | Telegram
+- Filter bar: "All" (active) | X icon "X" | Reddit icon "Reddit" | CMC icon "CMC" | Binance "Binance Sq." | YouTube "YouTube" | Telegram "Telegram"
 
-Masonry grid of proof cards:
-Each card:
-- Screenshot thumbnail (placeholder image, click to expand in lightbox modal)
-- Platform icon badge in top-right corner
-- Bottom overlay: Chiller username, task type, date, green "Verified" badge with checkmark
-- Hover: subtle scale up + blue glow border
+- Masonry grid (3 columns desktop, 2 tablet, 1 mobile) of proof cards:
+  20 cards total. Each card (glass, rounded-xl, overflow-hidden):
+  - Top: screenshot placeholder image (varied gradient colors to simulate different screenshots, ~250px tall)
+  - Platform icon badge in top-right corner (small colored circle with platform icon)
+  - Bottom overlay (dark gradient from bottom):
+    - "CryptoKing" username bold 14px
+    - "Posted on X" or platform name — 12px #9CA3AF
+    - "Verified ✓" small green badge
+    - "2 hours ago" timestamp
+  - Hover effect: scale 1.02, blue glow border
+  - Click: opens lightbox/modal showing the "full screenshot" with details: username, platform, task name, verification timestamp, posted link
 
-Pre-populate with 20 cards using placeholder screenshots, varied platforms.
-
-"Load More" button at bottom.
-
----
-
-PAGE 19: ADVERTISER ANALYTICS (route: /dashboard/advertiser/analytics)
-
-Top stat cards (4):
-- Total Tasks Completed: 847
-- Total Posts Live: 823
-- Average Cost Per Post: 142 TASK
-- Estimated Total Reach: 1.2M
-
-Charts:
-- Line chart: "Tasks Completed Over Time" — last 30 days — uptrend (Recharts)
-- Bar chart: "Performance by Platform" — bars for X, Reddit, CMC, Binance Square, YouTube, Telegram with different colors
-- Both charts have dark backgrounds matching the theme
-
-Table: "Top Performing Chillers"
-- Columns: Avatar, Username, Level, Tasks Completed (for this advertiser), Approval Rate, "Hire Directly" button
-- 10 rows of sample data
+- "Load More" button at bottom center (secondary outline)
 
 ---
 
-PAGE 20: PROFILE (route: /dashboard/chiller/profile)
+## PAGE 19: ADVERTISER ANALYTICS (/dashboard/advertiser/analytics)
 
-Header:
-- Large avatar (placeholder, with "Edit" overlay on hover)
-- Display name (editable)
-- Level badge (Gold) with visual tier display
-- Member since date
-- "Edit Profile" button
+- Heading: "Campaign Analytics" 28px
 
-Stats section (4 cards):
-- Tasks Completed: 186
-- Total Earned: 24,200 TASK
-- Reputation Score: 87/100 (circular gauge)
-- Referrals: 12
+**Stats row (4 cards):**
+- "Tasks Completed" — 847 — CheckCircle purple — "+124 this week" green small text
+- "Posts Live" — 823 — Globe green — "98% live rate"
+- "Avg Cost Per Post" — 142 TASK — Wallet blue — "-8% vs last month" green
+- "Estimated Reach" — 1.2M — Eye orange — "across 6 platforms"
 
-Platforms section:
-- Connected platforms with icons: X (connected, green check), Reddit (connected), YouTube (not connected, "Connect" button)
+**Charts row (two charts side by side, stacked on mobile):**
 
-Activity feed:
-- Recent 10 activities: tasks completed, levels earned, badges unlocked
+Left — "Tasks Completed Over Time" (line/area chart):
+- Last 30 days, upward trend
+- Blue line, blue/10 area fill
+- X axis: dates, Y axis: task count
+- Hover tooltip with exact numbers
 
-Badges section:
-- Grid of achievement badges: "First Task", "100 Tasks", "Speed Demon" (10 tasks in 1 day), "Perfect Score" (100% approval rate for 50+ tasks), "Top Referrer" — earned badges in color, unearned grayed out with lock
+Right — "Performance by Platform" (bar chart):
+- Bars for each platform: X (blue, tallest ~300), Reddit (orange, ~200), CMC (blue, ~150), Binance Square (yellow, ~100), YouTube (red, ~60), Telegram (blue, ~37)
+- Horizontal bars or vertical bars, each in platform color
 
----
+**Top Performing Chillers table (glass card, full width):**
+- Columns: Rank | Chiller | Level | Tasks Done | Approval Rate | Avg Response Time | "Hire"
+- 10 rows of sample data with "Hire Directly" small blue buttons
+- Best performers have 99-100% approval rates
 
-SUPABASE DATABASE TABLES:
-
-Create all these tables and connect them to the UI:
-
-users: id (uuid, PK), email, password_hash, wallet_address, account_type (text: 'advertiser' or 'chiller'), display_name, avatar_url, level (int, default 1), reputation_score (int, default 50), total_earned (numeric, default 0), total_spent (numeric, default 0), tasks_completed (int, default 0), referral_code (text, unique), referred_by (text), created_at (timestamptz), last_active_at (timestamptz), is_banned (boolean, default false)
-
-campaigns: id (uuid, PK), advertiser_id (FK users), title, description, content_text, content_image_url, platforms (text[]), reward_per_task (numeric), total_tasks (int), tasks_completed (int, default 0), tasks_remaining (int), min_chiller_level (int, default 1), min_reputation (int, default 0), status (text: 'active'/'paused'/'completed'/'expired'), created_at, expires_at
-
-tasks: id (uuid, PK), campaign_id (FK campaigns), chiller_id (FK users), status (text: 'available'/'claimed'/'submitted'/'approved'/'rejected'), proof_screenshot_url, proof_link, claimed_at, submitted_at, reviewed_at, rejection_reason
-
-wallets: id (uuid, PK), user_id (FK users), balance (numeric, default 0), total_deposited (numeric, default 0), total_withdrawn (numeric, default 0), total_earned (numeric, default 0), total_spent (numeric, default 0), total_staked (numeric, default 0), withdrawal_tier (text: 'new'/'warmed'/'trusted'/'vip'), first_task_completed_at (timestamptz)
-
-transactions: id (uuid, PK), user_id (FK users), type (text: 'deposit'/'withdrawal'/'earned'/'spent'/'staked'/'unstaked'/'referral_bonus'/'platform_fee'), amount (numeric), status (text: 'pending'/'completed'/'failed'), tx_hash (text), created_at
-
-stakes: id (uuid, PK), user_id (FK users), amount (numeric), tier_unlocked (int), staked_at, unstake_requested_at, unstake_available_at
-
-referrals: id (uuid, PK), referrer_id (FK users), referred_id (FK users), total_earned_from_referral (numeric, default 0), created_at
-
-blog_posts: id (uuid, PK), title, slug (unique), excerpt, content, featured_image_url, category, author, published_at, is_published (boolean)
-
-service_requests: id (uuid, PK), user_id (FK users), service_type, name, email, project_url, budget, description, status (text: 'new'/'in_progress'/'completed'), created_at
-
-Seed the database with realistic sample data so the platform looks alive when loaded.
+**Campaign Comparison table (glass card):**
+- Columns: Campaign | Status | Tasks | Completion Rate | Avg Cost | Reach
+- 3 campaigns from dashboard data with metrics
 
 ---
 
-IMPORTANT RULES:
-- Build ALL 20 pages. Do not skip any.
-- Do not defer anything to "future phases."
-- Every page must have sample/placeholder data so it looks like a live platform.
-- All navigation links must work and route to the correct pages.
-- Supabase auth must work for signup/login.
-- Mobile responsive on every page.
-- Dark mode only — no light mode toggle needed.
-- Use shadcn/ui components where possible (buttons, inputs, cards, tables, badges, tabs, modals, dropdowns, sliders, progress bars).
-- Use Recharts for all charts.
-- Use Lucide icons for all icons.
+## PAGE 20: CHILLER PROFILE (/dashboard/chiller/profile)
+
+**Profile header (glass card, full width):**
+- Left: large avatar circle (80px, gradient placeholder with initial letter "A")
+- Center: "Ahmed K." 28px bold, "Gold Chiller" with gold badge, "Member since January 2026" #9CA3AF, "Reputation: 87/100" with small gauge
+- Right: "Edit Profile" secondary button
+
+**Stats row (4 glass cards):**
+- "Tasks Completed" — 186 — CheckCircle
+- "Total Earned" — 24,200 TASK — Wallet
+- "Reputation Score" — 87/100 — circular gauge green
+- "Referrals" — 12 — Users
+
+**Connected Platforms section (glass card):**
+- Heading: "Connected Platforms"
+- List of platforms with connection status:
+  - X (Twitter) — green check "Connected" — "@ahmed_crypto" — "12.4K followers"
+  - Reddit — green check "Connected" — "u/ahmed_defi" — "8.2K karma"
+  - YouTube — gray X "Not connected" — "Connect" blue button
+  - Telegram — green check "Connected" — "@ahmed_task"
+  - Instagram — gray X "Not connected" — "Connect" blue button
+
+**Badges/Achievements section (glass card):**
+- Heading: "Achievements"
+- Grid of badge circles (4 columns):
+  - "First Task" — star icon — green (earned) — "Completed your first task"
+  - "Century Club" — "100" icon — green (earned) — "100 tasks completed"
+  - "Speed Demon" — Zap icon — green (earned) — "10 tasks in one day"
+  - "Perfect Score" — CheckCircle icon — blue (earned) — "100% approval on 50+ tasks"
+  - "Referral Master" — Users icon — green (earned) — "10+ active referrals"
+  - "Diamond Hands" — Diamond icon — gray (locked) — "Hold 10,000+ TASK for 30 days"
+  - "Top 10" — Trophy icon — gray (locked) — "Reach top 10 on leaderboard"
+  - "Legend" — Crown icon — gray (locked) — "Complete 1,000 tasks"
+  - Locked badges: dimmed, lock icon overlay, tooltip showing requirement
+
+**Recent Activity (glass card):**
+- "Recent Activity" heading
+- 10 activity items (same format as dashboard activity feed)
+
+---
+
+## IMPORTANT RULES FOR LOVABLE:
+
+1. BUILD ALL 20 PAGES. Every single one. Do not skip any page. Do not say "we'll add this later." Build it now.
+2. NO BACKEND. No database. No Supabase. No API calls. This is a VISUAL PROTOTYPE with hardcoded sample data. All data is written directly in the components.
+3. Every page must have realistic sample data so the platform looks like it's alive and being used by real people.
+4. All navigation links must work. Clicking "Task Board" in the nav goes to /tasks. Clicking "Dashboard" goes to /dashboard/chiller. Every link routes correctly.
+5. Mobile responsive on EVERY page. Test on 375px width.
+6. Dark mode only. No light mode toggle.
+7. The design must feel PREMIUM — like dYdX, Blur, Phantom wallet. Not cheap, not playful, not corporate. Crypto-native, professional, trustworthy.
+8. Use Lucide React for all icons. Use Recharts for all charts. Use React Router for navigation.
+9. Transitions and hover effects on all interactive elements. Cards should have hover:border-blue-500/30 transition. Buttons should have hover state changes.
+10. Import Satoshi font from Google Fonts or Fontshare for headings. Use Inter (already in most setups) for body text.
