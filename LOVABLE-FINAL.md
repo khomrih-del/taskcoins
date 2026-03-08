@@ -344,6 +344,8 @@ Sample tasks (vary these across the 12 cards):
 10. Binance Square — "Share trading strategy post" — 150 TASK — Silver+ — 22h — 18/50
 11. X — "Thread about Web3 gaming launch" — 250 TASK — Diamond+ — 24h — 5/20
 12. YouTube — "Review video comment with insights" — 100 TASK — Bronze+ — 14h — 42/60
+13. X — "Follow + Retweet @tokenproject" — 25 TASK — Any — 48h — 120/200 — (engagement task, lower reward)
+14. X — "Like + Quote Tweet about $TASK" — 40 TASK — Any — 24h — 85/150 — (engagement task)
 
 **Task Detail (opens when clicking a card — modal overlay or separate page):**
 - Top: back arrow + "Task Details"
@@ -488,6 +490,7 @@ Full-page wizard with progress bar at top.
 
 **Step 4 — Set Budget:**
 - Heading: "Set your campaign budget"
+- Launch promotion banner at top (green border glass card, Zap icon): "🎉 Launch Bonus: Get 5% extra distribution on your campaign! Pay for 1,000 TASK worth of tasks, get 1,050 TASK in distribution. Limited time offer."
 - "Reward Per Task" — number input with "TASK" suffix label, default 100, stepper buttons +/-
 - "Number of Tasks" — number input, default 50, stepper buttons
 - Live calculation card below (glass card, blue border):
@@ -1032,15 +1035,198 @@ Right — "Performance by Platform" (bar chart):
 
 ---
 
+## PAGE 21: ADVERTISER MARKETPLACE (/marketplace)
+
+Public page — advertisers browse Chiller profiles to find the best workers for targeted campaigns.
+
+- Hero: "Advertiser Marketplace" 36px, "Find the Perfect Chillers for Your Campaign" 18px #9CA3AF
+
+**Filter sidebar (left on desktop, top sheet on mobile):**
+- "Platform Expertise" — checkboxes: X, Reddit, CMC, Binance Square, YouTube, Telegram
+- "Minimum Level" — dropdown: Any, Silver+, Gold+, Diamond+, Legend
+- "Reputation Score" — range slider 0-100
+- "Follower Count" — dropdown: Any, 1K+, 5K+, 10K+, 50K+
+- "Sort By" — dropdown: Most Tasks Completed, Highest Reputation, Newest Members
+- "Apply Filters" blue button + "Reset" link
+
+**Chiller profile cards grid (3 columns desktop, 1 mobile):**
+15 cards. Each card (glass, rounded-2xl):
+- Avatar circle (gradient placeholder) + username bold 18px
+- Level badge (colored: Bronze/Silver/Gold/Diamond/Legend)
+- Reputation gauge (small circular, showing score /100)
+- Platform icons row showing which platforms they're active on (small colored icons)
+- Stats: "186 tasks completed" | "Member since Jan 2026"
+- Follower count: "12.4K followers on X" if connected
+- "Hire Directly" blue button (full width at bottom of card)
+
+Sample Chillers with varied levels (3 Bronze, 3 Silver, 4 Gold, 3 Diamond, 2 Legend), varied reputations (60-98), varied platforms.
+
+**"Hire Directly" modal (opens on button click):**
+- Heading: "Send a Direct Task Offer to [username]"
+- Select platform dropdown
+- Task content textarea
+- Reward amount input (TASK)
+- Task deadline dropdown (12h/24h/48h/72h)
+- "Send Offer" blue button + "Cancel" link
+
+---
+
+## PAGE 22: MY CAMPAIGNS — Advertiser (/dashboard/advertiser/campaigns)
+
+- Heading: "My Campaigns" 28px
+- Filter tabs: "All (6)" | "Active (3)" | "Completed (2)" | "Paused (1)"
+- "Create New Campaign" blue button top-right
+
+**Campaign cards (stacked list, full width):**
+Each card (glass, rounded-2xl, padding 24px):
+- Left: campaign title 20px bold + platform icon badges + creation date
+- Center: progress section — "67/100 tasks completed" large text + progress bar + percentage
+- Right: status badge (green "Active" / blue "Completed" / orange "Paused") + total spend "15,000 TASK"
+- Bottom row: "Tasks Completed: 67" | "Posts Live: 65" | "Estimated Reach: 195K" | "Avg Cost: 150 TASK"
+- "View Details" blue link + "Pause" outline button (for active) or "Reactivate" button (for paused)
+
+6 sample campaigns:
+1. "Launch $TOKEN on X & Reddit" — X, Reddit — Active — 67/100 — 15,000 TASK — 2 days ago
+2. "Reddit AMA Promotion" — Reddit — Active — 23/50 — 7,500 TASK — 5 days ago
+3. "CMC Community Push Q1" — CMC — Completed — 100/100 — 10,000 TASK — completed 1 day ago
+4. "Binance Square Awareness" — Binance — Completed — 75/75 — 11,250 TASK — completed 1 week ago
+5. "$TASK Token Awareness" — X, Reddit, CMC, Telegram — Active — 145/300 — 45,000 TASK — 3 days ago
+6. "YouTube Comment Campaign" — YouTube — Paused — 12/40 — 6,000 TASK — paused, "Low approval rate" note
+
+**Click a campaign → Campaign Detail view (or modal):**
+- Campaign title + status + all details
+- Progress bar large
+- Budget breakdown: "Reward: 150 TASK × 100 tasks = 15,000 + 3,750 fee = 18,750 total"
+- List of all task submissions for this campaign: Chiller avatar + username + status (approved/pending/rejected) + proof screenshot + timestamp
+- Quick approve/reject buttons for pending submissions
+
+---
+
+## PAGE 23: SETTINGS (/dashboard/settings)
+
+Works for both Chiller and Advertiser accounts.
+
+- Heading: "Settings" 28px
+
+**Profile Settings section (glass card):**
+- Avatar upload area: current avatar + "Change Avatar" button
+- Display Name — text input (pre-filled "Ahmed K.")
+- Email — text input (pre-filled, with "Verified ✓" green badge)
+- Bio — textarea (optional, placeholder "Tell us about yourself")
+- "Save Changes" blue button
+
+**Wallet Settings section (glass card):**
+- "Connected Wallet" — "0x4f2...8a3" with green dot + "Disconnect" red link
+- "Default Withdrawal Address" — text input (pre-filled with wallet address)
+- "Connect a Different Wallet" outline button
+
+**Notification Settings section (glass card):**
+- Toggle switches (blue when on):
+  - "Task approved notifications" — ON
+  - "New task available notifications" — ON
+  - "Referral signup notifications" — ON
+  - "Campaign completion (advertiser)" — ON
+  - "Weekly earnings summary email" — OFF
+  - "Marketing emails" — OFF
+
+**Security section (glass card):**
+- "Change Password" — Current password + New password + Confirm fields + "Update Password" button
+- "Two-Factor Authentication" — "Not enabled" badge + "Enable 2FA" outline button
+
+**Language section (glass card):**
+- "Platform Language" — dropdown with: English (selected), العربية (Arabic), Español, Türkçe, Bahasa Indonesia, Русский, Português
+- "Save Language" button
+
+**Danger Zone section (glass card, red border):**
+- "Delete Account" — "Permanently delete your account and all data" — "Delete Account" red outline button
+
+---
+
+## PAGE 24: ADMIN PANEL (/admin)
+
+Internal page — for platform operators only. Different layout from user dashboards.
+
+**Admin sidebar (dark, bg-[#0A0E17]):**
+- "TaskCoins Admin" logo at top in red/orange accent
+- Menu: Dashboard, Users, Campaigns, Tasks, Finances, Analytics, Blog Manager, Settings
+- "Back to Platform" link at bottom
+
+**Admin Dashboard (default view):**
+- 6 stat cards top row:
+  - "Total Users" — 1,247 — Users icon — "+47 today" green
+  - "Active Chillers" — 1,089 — green
+  - "Active Advertisers" — 158 — blue
+  - "Total Revenue (Platform Fees)" — 287,400 TASK — Wallet — "+12,300 today"
+  - "Tasks Today" — 342 — CheckCircle
+  - "Pending Reviews" — 12 — Clock orange
+- Charts row:
+  - Line chart: "Daily Active Users" (30 days)
+  - Bar chart: "Revenue per Day" (30 days, TASK amounts)
+- Recent activity feed: "New user signup: @newuser123", "Campaign created: Launch $X", "Task flagged by advertiser", "Withdrawal request: 2,000 TASK"
+
+**Admin Users page:**
+- Search bar: "Search users by name, email, or wallet..."
+- Table: Avatar | Username | Email | Type (Chiller/Advertiser badge) | Level | Reputation | Tasks | Joined | Status (Active/Banned) | Actions
+- Actions column: "View" link, "Ban" red button (or "Unban" green), "Edit Level" dropdown
+- 20 sample user rows
+- Pagination
+
+**Admin Campaigns page:**
+- Table: Campaign Title | Advertiser | Status | Tasks (progress) | Spend | Created | Actions
+- Actions: "View", "Pause", "Remove" (red)
+- 10 sample campaigns
+
+**Admin Finances page:**
+- Large stat: "Total Platform Fees Collected: 287,400 TASK" — "≈ $28,740"
+- "Treasury Balance: 145,200 TASK"
+- "Total Burned: 14,350 TASK"
+- Table: "Burn History" — Date | Amount Burned | Tx Hash (truncated) | Status
+- Table: "Withdrawal Requests" — User | Amount | Wallet | Requested Date | Status (Pending/Approved/Rejected) | Approve/Reject buttons
+- Revenue chart: monthly revenue bar chart (6 months)
+
+**Admin Blog Manager page:**
+- "Create New Post" blue button top-right
+- Table: Title | Category | Status (Published/Draft) | Date | Actions (Edit/Delete/Unpublish)
+- Blog editor (on create/edit): Title input, Slug input (auto-generated), Category dropdown, Content rich text area (large textarea), Featured Image upload, "Publish" / "Save Draft" buttons
+
+---
+
 ## IMPORTANT RULES FOR LOVABLE:
 
-1. BUILD ALL 20 PAGES. Every single one. Do not skip any page. Do not say "we'll add this later." Build it now.
+1. BUILD ALL 24 PAGES. Every single one. Do not skip any page. Do not say "we'll add this later." Build it now.
 2. NO BACKEND. No database. No Supabase. No API calls. This is a VISUAL PROTOTYPE with hardcoded sample data. All data is written directly in the components.
 3. Every page must have realistic sample data so the platform looks like it's alive and being used by real people.
-4. All navigation links must work. Clicking "Task Board" in the nav goes to /tasks. Clicking "Dashboard" goes to /dashboard/chiller. Every link routes correctly.
+4. All navigation links must work. Every sidebar link, every nav link, every button that says "View All" or "View Details" must route to the correct page. Here is the full route map:
+   - / → Landing Page
+   - /auth → Sign Up / Login
+   - /tasks → Task Board
+   - /leaderboard → Leaderboard
+   - /university → University
+   - /services → Services
+   - /blog → Blog
+   - /blog/:slug → Blog Post
+   - /whitepaper → Whitepaper
+   - /roadmap → Roadmap
+   - /proof-gallery → Proof Gallery
+   - /marketplace → Advertiser Marketplace
+   - /dashboard/chiller → Chiller Dashboard
+   - /dashboard/chiller/my-tasks → My Tasks
+   - /dashboard/chiller/staking → Staking
+   - /dashboard/chiller/referrals → Referrals
+   - /dashboard/chiller/profile → Profile
+   - /dashboard/wallet → Wallet (shared by both account types)
+   - /dashboard/settings → Settings (shared by both account types)
+   - /dashboard/advertiser → Advertiser Dashboard
+   - /dashboard/advertiser/create → Create Campaign
+   - /dashboard/advertiser/campaigns → My Campaigns
+   - /dashboard/advertiser/review → Review Proofs
+   - /dashboard/advertiser/analytics → Advertiser Analytics
+   - /admin → Admin Panel (internal)
 5. Mobile responsive on EVERY page. Test on 375px width.
 6. Dark mode only. No light mode toggle.
 7. The design must feel PREMIUM — like dYdX, Blur, Phantom wallet. Not cheap, not playful, not corporate. Crypto-native, professional, trustworthy.
 8. Use Lucide React for all icons. Use Recharts for all charts. Use React Router for navigation.
 9. Transitions and hover effects on all interactive elements. Cards should have hover:border-blue-500/30 transition. Buttons should have hover state changes.
 10. Import Satoshi font from Google Fonts or Fontshare for headings. Use Inter (already in most setups) for body text.
+11. The Chiller and Advertiser dashboards are SEPARATE experiences with DIFFERENT sidebars and DIFFERENT pages. They must not share the same dashboard layout. A Chiller sees: Dashboard, Task Board, My Tasks, Wallet, Staking, Leaderboard, Referrals, University, Profile, Settings. An Advertiser sees: Dashboard, Create Campaign, My Campaigns, Review Proofs, Analytics, Wallet, Settings.
+12. Simulate logged-in state: dashboard pages should show the sidebar and user info as if someone is logged in. The landing page and public pages (leaderboard, proof gallery, blog, whitepaper, roadmap, services, university, marketplace) show the main nav header with Sign Up / Connect Wallet buttons.
