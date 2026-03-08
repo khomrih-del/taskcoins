@@ -479,13 +479,61 @@ TaskCoins launches on three simultaneous fronts. All three feed each other — n
 
 **Sales pitch:** "Pay 10,000 TaskCoins → get 300 real people posting about your project across X, Reddit, CMC, Binance Square within 24 hours. Verified proof for every post."
 
-### The Flywheel
+### Front 4: Investors (Buy Pressure — Fuel the Price)
+
+**Goal:** Attract direct investors to the token using FOMO marketing and the "next 100x" narrative. Because TaskCoins has real utility, this is 10x easier than a pure meme coin.
+
+**Why investors buy TaskCoins over random launches:**
+
+| What investors see | Why it matters |
+|-------------------|---------------|
+| Platform is LIVE | Not a whitepaper promise — taskcoins.io is working today |
+| Users are earning | Real people completing real tasks = proof of demand |
+| Advertisers are paying | Buy pressure comes from business revenue, not just speculation |
+| 20% platform fee | This is a real business with real revenue — not "we'll figure it out" |
+| Quarterly burns | Supply decreases over time — deflationary by design |
+| CEX listings | MEXC/LBank = accessibility for retail investors |
+| Pepeto team | Proven track record of launching and scaling a crypto project |
+
+**FOMO Marketing Angles:**
+
+- "TaskCoins is the next 100x — real platform, real revenue, real users earning daily"
+- "This is what [100x coin] looked like at $1M market cap before it exploded"
+- "The platform takes 20% of every transaction — imagine what happens when 100K users are on it"
+- "You're not buying a meme — you're buying equity in a working business"
+- "While other coins have zero utility, TaskCoins powers an entire economy of 300+ active workers"
+- "Life-changing opportunity — utility tokens with live products are the ones that survive and 100x"
+
+**Investor channels:**
+
+| Channel | Tactic |
+|---------|--------|
+| **Crypto Twitter / X** | Paid KOLs (Key Opinion Leaders) posting "next 100x" threads with platform screenshots |
+| **Telegram caller groups** | Get TaskCoins called in 5-10 active caller channels |
+| **YouTube investors** | Different angle than Chiller YouTubers — these focus on "why TASK token will 100x" not "how to earn" |
+| **CoinDesk / CoinTelegraph PRs** | Investor-focused articles: "TaskCoins raises $X in first week" / "New utility token powers micro-task economy" |
+| **Dex trending** | Push for DEXTools / DEXScreener trending on launch day — investors watch these |
+| **CMC / CoinGecko** | Fast-tracked listing = visibility to millions of investors daily |
+
+**Why utility kills meme coins for investor confidence:**
+
+Most meme coins pump and dump because there's no reason to hold. TaskCoins has built-in buy pressure:
+- Every advertiser MUST buy TaskCoins to run campaigns
+- Every quarter, tokens get burned
+- Staking locks supply
+- As the platform grows, demand for the token grows with it
+
+This means even after the initial FOMO wave, there's sustained demand. That's what turns a pump into a long-term hold.
+
+### The Flywheel (All 4 Fronts)
 
 ```
 More Chillers → stronger offer for advertisers ("we have 5,000 active posters")
     → More advertisers → more buy pressure on token + more tasks available
         → More token volume → more PR coverage → attracts more Chillers + advertisers
-            → Cycle repeats, each loop bigger than the last
+            → Rising price → FOMO investors pile in → more liquidity + volume
+                → More PR coverage about the price action → more Chillers + advertisers + investors
+                    → Cycle repeats, each loop bigger than the last
 ```
 
 ### Launch Sequence (Week 1-2)
@@ -519,4 +567,4 @@ Every step feeds the next. YouTuber volume strengthens the CEX application. CEX 
 
 **End of Specification**
 
-*This document contains all features planned for TaskCoins.io v1. The dev should build P0 items first, then P1, then P2. The three-front GTM strategy runs in parallel with development.*
+*This document contains all features planned for TaskCoins.io v1. The dev should build P0 items first, then P1, then P2. The four-front GTM strategy (Chillers + Token + Advertisers + Investors) runs in parallel with development.*
