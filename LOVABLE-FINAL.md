@@ -541,7 +541,9 @@ Sample submissions with varied Chillers, platforms, and timestamps.
 
 ---
 
-## PAGE 9: WALLET (/dashboard/wallet)
+## PAGE 9A: CHILLER WALLET (/dashboard/chiller/wallet)
+
+This is the wallet page that CHILLERS see. It focuses on earnings, withdrawal warming, and hold incentives.
 
 **Balance hero section (centered, padding 48px):**
 - Small "Your Balance" label in #9CA3AF
@@ -577,17 +579,65 @@ Sample submissions with varied Chillers, platforms, and timestamps.
     - VIP | Weekly | 100 TASK | Diamond+ level + 90+ reputation
     - Current tier row highlighted with blue border
   - If eligible: "Amount to withdraw" number input + "Wallet address" text input (placeholder "0x...") + "Request Withdrawal" primary button
-  - Blue info banner at bottom: Wallet icon, "TaskCoins is designed for long-term growth. The longer you hold, the more your earnings are worth. Workers who held from Day 1 saw their tokens grow 10x. Hold for 100x. 💎"
+  - Blue info banner at bottom: Wallet icon, "TaskCoins is designed for long-term growth. The longer you hold, the more your earnings are worth. Workers who held from Day 1 saw their tokens grow 10x. Hold for 100x."
 
 **Transaction History section below:**
 - Heading: "Transaction History" + "Export CSV" small link
 - Table (glass card, rounded-2xl):
   - Columns: Date | Type | Amount | Status
-  - Type badges: green "Earned", blue "Deposited", orange "Withdrawn", purple "Staked", cyan "Referral Bonus", gray "Platform Fee"
+  - Type badges: green "Earned", blue "Deposited", orange "Withdrawn", purple "Staked", cyan "Referral Bonus"
   - Amount: green "+200 TASK" for earnings, red "-500 TASK" for withdrawals
   - Status badges: green "Completed", yellow "Pending", red "Failed"
   - 20 sample rows with varied types, dates (last 30 days), and amounts
   - Pagination: "← Previous | Page 1 of 3 | Next →"
+
+---
+
+## PAGE 9B: ADVERTISER WALLET (/dashboard/advertiser/wallet)
+
+This is a DIFFERENT wallet page that ADVERTISERS see. No warming tiers, no hold messaging — advertisers need to deposit tokens to fund campaigns and withdraw unused funds. Completely different experience from the Chiller wallet.
+
+**Balance hero section (centered, padding 48px):**
+- Small "Campaign Balance" label in #9CA3AF
+- Large token display: blue coin icon + "50,000 TASK" in 48px Satoshi bold white
+- USD equivalent: "≈ $5,000.00" in 20px #9CA3AF
+- Two buttons below: "Deposit More" (primary blue, ArrowDown icon) | "Withdraw Unused" (secondary outline, ArrowUp icon)
+
+**Balance Breakdown section (3 glass cards in a row):**
+- Card 1 (blue tint): "Available Balance" — "50,000 TASK" — "Ready to use for campaigns"
+- Card 2 (orange tint): "Locked in Active Campaigns" — "18,750 TASK" — "Allocated to 3 active campaigns"
+- Card 3 (green tint): "Total Deposited (All Time)" — "215,000 TASK" — "Since Jan 2026"
+
+**Deposit section (glass card):**
+- Heading: "Deposit TaskCoins"
+- "Connect your wallet" — "Connect MetaMask" button — when connected: green check + address
+- Amount input with "TASK" suffix + "MAX" button
+- "Deposit TASK" primary blue button
+- Info: "Deposits confirmed after 12 block confirmations (~3 minutes)"
+
+**Withdraw section (glass card):**
+- Heading: "Withdraw Unused Funds"
+- "You can withdraw any balance not locked in active campaigns."
+- "Available to withdraw: 50,000 TASK" in green
+- Amount input + wallet address input + "Request Withdrawal" button
+- Note: "Withdrawals are processed within 24 hours."
+- NO warming tiers. NO countdown. NO hold messaging. Advertisers can withdraw freely — they are the BUYERS, not the earners.
+
+**Campaign Spend History section (glass card):**
+- Heading: "Campaign Spend History" + "Export CSV" link
+- Table:
+  - Columns: Date | Campaign | Type | Amount | Status
+  - Type badges: blue "Deposited", orange "Campaign Funded", green "Refunded (unused)", red "Platform Fee"
+  - Sample rows:
+    - Mar 8 | — | Deposited | +25,000 TASK | Completed
+    - Mar 7 | "Launch $TOKEN on X" | Campaign Funded | -18,750 TASK | Active
+    - Mar 5 | "Reddit AMA Promo" | Campaign Funded | -9,375 TASK | Active
+    - Mar 3 | "CMC Push Q1" | Campaign Funded | -12,500 TASK | Completed
+    - Mar 3 | "CMC Push Q1" | Refunded (unused) | +1,250 TASK | Completed
+    - Mar 1 | — | Deposited | +50,000 TASK | Completed
+    - Feb 28 | "Telegram Blast" | Campaign Funded | -6,250 TASK | Completed
+    - Feb 25 | — | Deposited | +40,000 TASK | Completed
+  - Pagination
 
 ---
 
@@ -1197,7 +1247,7 @@ Internal page — for platform operators only. Different layout from user dashbo
 
 ## IMPORTANT RULES FOR LOVABLE:
 
-1. BUILD ALL 24 PAGES. Every single one. Do not skip any page. Do not say "we'll add this later." Build it now.
+1. BUILD ALL 25 PAGES (Pages 1-8, 9A, 9B, 10-24). Every single one. Do not skip any page. Do not say "we'll add this later." Build it now.
 2. NO BACKEND. No database. No Supabase. No API calls. This is a VISUAL PROTOTYPE with hardcoded sample data. All data is written directly in the components.
 3. Every page must have realistic sample data so the platform looks like it's alive and being used by real people.
 4. All navigation links must work. Every sidebar link, every nav link, every button that says "View All" or "View Details" must route to the correct page. Here is the full route map:
@@ -1218,7 +1268,8 @@ Internal page — for platform operators only. Different layout from user dashbo
    - /dashboard/chiller/staking → Staking
    - /dashboard/chiller/referrals → Referrals
    - /dashboard/chiller/profile → Profile
-   - /dashboard/wallet → Wallet (shared by both account types)
+   - /dashboard/chiller/wallet → Chiller Wallet (earnings, warming tiers, hold messaging)
+   - /dashboard/advertiser/wallet → Advertiser Wallet (deposits, campaign spend, free withdrawals)
    - /dashboard/settings → Settings (shared by both account types)
    - /dashboard/advertiser → Advertiser Dashboard
    - /dashboard/advertiser/create → Create Campaign
@@ -1232,5 +1283,5 @@ Internal page — for platform operators only. Different layout from user dashbo
 8. Use Lucide React for all icons. Use Recharts for all charts. Use React Router for navigation.
 9. Transitions and hover effects on all interactive elements. Cards should have hover:border-blue-500/30 transition. Buttons should have hover state changes.
 10. Import Satoshi font from Google Fonts or Fontshare for headings. Use Inter (already in most setups) for body text.
-11. The Chiller and Advertiser dashboards are SEPARATE experiences with DIFFERENT sidebars and DIFFERENT pages. They must not share the same dashboard layout. A Chiller sees: Dashboard, Task Board, My Tasks, Wallet, Staking, Leaderboard, Referrals, University, Profile, Settings. An Advertiser sees: Dashboard, Create Campaign, My Campaigns, Review Proofs, Analytics, Wallet, Settings.
+11. The Chiller and Advertiser dashboards are SEPARATE experiences with DIFFERENT sidebars, DIFFERENT pages, and DIFFERENT wallet pages. They must not share the same dashboard layout. A Chiller sees: Dashboard, Task Board, My Tasks, Wallet (Page 9A — warming tiers, hold messaging, earnings history), Staking, Leaderboard, Referrals, University, Profile, Settings. An Advertiser sees: Dashboard, Create Campaign, My Campaigns, Review Proofs, Analytics, Wallet (Page 9B — deposit focus, campaign spend history, free withdrawals, NO warming tiers), Settings.
 12. Simulate logged-in state: dashboard pages should show the sidebar and user info as if someone is logged in. The landing page and public pages (leaderboard, proof gallery, blog, whitepaper, roadmap, services, university, marketplace) show the main nav header with Sign Up / Connect Wallet buttons.
