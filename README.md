@@ -359,12 +359,34 @@ Advertiser connects wallet (MetaMask)
             → Advertiser creates campaign from internal balance
 ```
 
-### Chiller Withdrawal
+### Chiller Withdrawal (Stripe-Style Warming System)
+
+Withdrawals are NOT instant. New accounts must warm up before they can withdraw — same model as Stripe, Fiverr, and every serious platform.
+
+| Account Status | Withdrawal Rule |
+|---------------|----------------|
+| **New account (0-30 days)** | NO withdrawals. Earnings accumulate in internal balance. |
+| **Warmed account (30-60 days)** | Can withdraw once per month, minimum 500 TASK |
+| **Trusted account (60+ days, reputation 70+)** | Can withdraw bi-weekly, minimum 200 TASK |
+| **VIP account (Diamond+ level, reputation 90+)** | Can withdraw weekly, minimum 100 TASK |
+
+**Why this works:**
+- Standard industry practice — Stripe, Fiverr, Upwork all do this
+- Prevents Day 1 dump pressure — nobody sells for at least 2-4 weeks
+- During the lock period, workers watch the price go UP from marketing
+- By the time they CAN withdraw, most choose to HOLD because they see the growth
+- Estimated 80% of workers will hold, only 20% will withdraw early
+
+**The hold incentive message to Chillers:**
+"TaskCoins is going to 100x. The longer you hold your earnings, the more they're worth. Workers who held from Day 1 turned $50 in task earnings into $5,000. Don't cash out early — let your earnings grow."
+
 ```
-Chiller requests withdrawal from internal balance
-    → Platform deducts amount from internal balance
-        → Platform smart contract sends TASK to Chiller's wallet
-            → Transaction confirmed on-chain
+Chiller completes tasks → earnings credited to internal balance (no withdrawal yet)
+    → Account warms over 30+ days
+        → Chiller requests withdrawal
+            → Platform checks: account age + reputation + minimum amount
+                → Approved: TASK sent to Chiller's wallet on-chain
+                → Denied: "Complete X more days / reach Y reputation to unlock withdrawals"
 ```
 
 ### Platform Cut (Off-Chain)
@@ -525,7 +547,30 @@ Most meme coins pump and dump because there's no reason to hold. TaskCoins has b
 
 This means even after the initial FOMO wave, there's sustained demand. That's what turns a pump into a long-term hold.
 
-### The Flywheel (All 4 Fronts)
+### Front 5: Self-Funded Campaigns (Day 1 Revenue Hack)
+
+**The genius move:** You ARE the first advertiser. From Day 1, you fund campaigns paying Chillers to post about Pepeto AND TaskCoins.
+
+**Why this is insanely profitable:**
+
+| Campaign | You pay | You get back |
+|----------|---------|-------------|
+| "Post about Pepeto on X" | 100 TASK per worker | Pepeto marketing value (would cost $500+ at an agency) |
+| "Post about TaskCoins on Reddit" | 100 TASK per worker | Token awareness → price goes up → your treasury is worth more |
+| "Share Bitcoinomist article on CMC" | 50 TASK per worker | Website traffic → ad revenue + SEO rankings |
+
+**The math:**
+- You pay Chillers in TaskCoins (which you minted — costs you nothing but liquidity)
+- Chillers promote YOUR projects (Pepeto, TaskCoins, Bitcoinomist)
+- You make real money from the promotion (Pepeto pumps, TaskCoins pumps, site traffic)
+- Chillers hold their TaskCoins (because of the withdrawal lock + 100x narrative)
+- You're literally getting paid while paying them
+
+**Budget:** Allocate 5-10% of treasury (15M-30M TASK) for self-funded campaigns in the first 90 days. This solves the chicken-and-egg problem — Chillers always have tasks to do, even before real advertisers arrive.
+
+**Transition:** As real advertisers come in (Month 2-3), reduce self-funded campaigns gradually. By Month 4, the platform should sustain itself on advertiser demand alone.
+
+### The Flywheel (All 4 Fronts + Self-Funded Engine)
 
 ```
 More Chillers → stronger offer for advertisers ("we have 5,000 active posters")
@@ -545,8 +590,8 @@ More Chillers → stronger offer for advertisers ("we have 5,000 active posters"
 | Day 1 | CMC + CoinGecko listing applications submitted |
 | Days 1-3 | 3-5 YouTuber videos go live (showing platform + earning) |
 | Days 3-5 | CoinDesk / CoinTelegraph PR published (timed after initial volume builds) |
-| Week 2 | MEXC or LBank listing goes live |
-| Week 2 | Second wave PRs on listing day (new news cycle, new momentum) |
+| Week 2+ | MEXC or LBank listing (application in progress — no public date promised) |
+| On listing day | Second wave PRs (new news cycle, new momentum) |
 
 Every step feeds the next. YouTuber volume strengthens the CEX application. CEX listing creates a second PR cycle. Second PR cycle brings new users. New users = more tasks = more volume. The loop never stops.
 
