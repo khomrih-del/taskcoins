@@ -433,6 +433,90 @@ Advertiser funds campaign: 1,000 TASK
 
 ---
 
+## 21. Go-To-Market: Three-Front Strategy
+
+TaskCoins launches on three simultaneous fronts. All three feed each other — none works alone.
+
+### Front 1: Chillers (Supply Side — Grow the Workforce)
+
+**Goal:** Recruit and retain thousands of active Chillers who complete tasks daily.
+
+| Channel | Tactic |
+|---------|--------|
+| **YouTubers** | Partner with 3-5 mid-tier crypto YouTubers (50K-200K subs) to show themselves earning TaskCoins live on camera — "I earned X TaskCoins in 1 hour" |
+| **Referral Program** | Every Chiller recruits more Chillers — 5% of referred earnings incentivizes organic growth |
+| **University** | Free courses on growing social accounts attract people who want to earn more per task |
+| **Micro-task communities** | Target existing SEOSprint, Picoworkers, Microworkers users — they already understand the model |
+| **Developing markets** | Focus on regions where $5-10/day is meaningful income — Southeast Asia, MENA, Latin America, CIS |
+| **Kira Army** | The original 300 army members are Day 1 Chillers — already trained, already engaged |
+
+### Front 2: Token (Volume + Liquidity — Fuel the Economy)
+
+**Goal:** Drive buy pressure, trading volume, and token visibility to support the platform economy.
+
+| Channel | Tactic |
+|---------|--------|
+| **PR on major outlets** | CoinDesk, CoinTelegraph, Bitcoin Magazine — same outlets and relationships used for Pepeto |
+| **Bitcoinomist coverage** | Our own media outlet publishes TaskCoins news on Day 1 and ongoing |
+| **CEX listings** | MEXC or LBank within Week 2 — makes the token accessible to non-DeFi users |
+| **CMC + CoinGecko** | Listing applications submitted on Day 1 — visibility to millions of crypto users |
+| **Burn mechanism** | 5% quarterly burn of platform fees creates deflationary narrative for holders |
+| **Staking** | Locks supply, reduces sell pressure, rewards committed community |
+| **Kira distribution** | Kira auto-generates content about TaskCoins and distributes across X, Reddit, CMC, Binance Square |
+
+### Front 3: Advertisers (Demand Side — Bring the Money)
+
+**Goal:** Attract advertisers who buy TaskCoins to fund campaigns. This is the most critical front — without advertisers, there are no tasks and no earnings.
+
+| Target | Why they need TaskCoins |
+|--------|----------------------|
+| **Crypto projects launching tokens** | They need distribution — 300 people posting about their launch in 24 hours |
+| **NFT projects** | Need buzz and social proof before mint |
+| **CEXs promoting new listings** | Want community awareness for newly listed tokens |
+| **DeFi protocols** | Need user awareness for new features or chain expansions |
+| **Web3 gaming** | Need player acquisition and social buzz |
+| **Pepeto network** | Every project we know from Pepeto's journey is a potential advertiser — warm leads from Day 1 |
+
+**Sales pitch:** "Pay 10,000 TaskCoins → get 300 real people posting about your project across X, Reddit, CMC, Binance Square within 24 hours. Verified proof for every post."
+
+### The Flywheel
+
+```
+More Chillers → stronger offer for advertisers ("we have 5,000 active posters")
+    → More advertisers → more buy pressure on token + more tasks available
+        → More token volume → more PR coverage → attracts more Chillers + advertisers
+            → Cycle repeats, each loop bigger than the last
+```
+
+### Launch Sequence (Week 1-2)
+
+| Day | Action |
+|-----|--------|
+| Day 1 | Token deploy + Uniswap liquidity live |
+| Day 1 | Bitcoinomist PR published (own outlet — instant) |
+| Day 1 | CMC + CoinGecko listing applications submitted |
+| Days 1-3 | 3-5 YouTuber videos go live (showing platform + earning) |
+| Days 3-5 | CoinDesk / CoinTelegraph PR published (timed after initial volume builds) |
+| Week 2 | MEXC or LBank listing goes live |
+| Week 2 | Second wave PRs on listing day (new news cycle, new momentum) |
+
+Every step feeds the next. YouTuber volume strengthens the CEX application. CEX listing creates a second PR cycle. Second PR cycle brings new users. New users = more tasks = more volume. The loop never stops.
+
+---
+
+## 22. Competitive Advantage
+
+| Factor | TaskCoins | Galxe / Layer3 / Zealy |
+|--------|-----------|----------------------|
+| **Model** | Get paid to post content on YOUR accounts | Complete Web3 quests (bridge, swap, mint) |
+| **Payment** | Native token with real utility | Points or random airdrops |
+| **Media** | Own media outlet (Bitcoinomist) feeding content | No media arm |
+| **Distribution** | Kira auto-generates platform-ready content | Manual content creation |
+| **Team** | Pepeto launch experience, outlet relationships | Varies |
+| **Advertiser value** | Real social posts from real accounts with proof | Quest completions (less visible marketing) |
+
+---
+
 **End of Specification**
 
-*This document contains all features planned for TaskCoins.io v1. The dev should build P0 items first, then P1, then P2.*
+*This document contains all features planned for TaskCoins.io v1. The dev should build P0 items first, then P1, then P2. The three-front GTM strategy runs in parallel with development.*
