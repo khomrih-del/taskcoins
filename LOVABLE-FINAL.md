@@ -50,7 +50,8 @@ DO NOT skip any page. DO NOT defer anything. DO NOT simplify. Build every single
 
 **Desktop header (sticky, h-16, bg-[#0A0E17]/80 backdrop-blur-xl, border-b border-white/5):**
 - Left: "TaskCoins" logo text in Satoshi bold 24px white, with a small blue circle/coin icon before the text
-- Center: navigation links in Inter 15px #9CA3AF, hover:text-white — Home, Task Board, University, Services, Blog, Whitepaper, Roadmap, Leaderboard
+- Center: navigation links in Inter 15px #9CA3AF, hover:text-white — Home, Task Board, Leaderboard, Marketplace, University, Services, Blog, Whitepaper, Roadmap
+- If there are too many links for the screen, use a "More" dropdown for the last 3-4 items
 - Right: "Connect Wallet" button (secondary/outline style, small wallet icon), "Sign Up" button (primary blue filled)
 - When "logged in" (simulate with a toggle or default to logged-in state on dashboard pages): show wallet icon + "0x4f2...8a3" truncated address + user avatar dropdown
 
@@ -965,11 +966,14 @@ Public page, no login required.
 
 - Heading: "Campaign Analytics" 28px
 
-**Stats row (4 cards):**
+**Stats row (7 cards, 4 on first row, 3 on second row — horizontal scroll on mobile):**
 - "Tasks Completed" — 847 — CheckCircle purple — "+124 this week" green small text
+- "Tasks Pending" — 38 — Clock orange — "awaiting Chiller action"
+- "Tasks in Review" — 12 — Eye yellow — "proof submitted, awaiting your approval"
 - "Posts Live" — 823 — Globe green — "98% live rate"
-- "Avg Cost Per Post" — 142 TASK — Wallet blue — "-8% vs last month" green
-- "Estimated Reach" — 1.2M — Eye orange — "across 6 platforms"
+- "Estimated Reach" — 1.2M — Users orange — "across 6 platforms"
+- "Total Spend" — 145,000 TASK — Wallet blue — "32,000 this month"
+- "Avg Cost Per Post" — 142 TASK — BarChart3 blue — "-8% vs last month" green
 
 **Charts row (two charts side by side, stacked on mobile):**
 
