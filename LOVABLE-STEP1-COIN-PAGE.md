@@ -1,6 +1,6 @@
 I need to completely transform the landing page (/) into a TOKEN/COIN page — like how Uniswap, dYdX, or Blur have a marketing page for their token, with a "Launch App" button that takes users to the actual platform.
 
-The current landing page has platform content (For Advertisers, For Chillers, How It Works with sign-up steps, testimonials, task stats). All of that platform content needs to move behind a "Launch App" route. The landing page becomes an INVESTOR-FACING coin page about the TASK token, the mining narrative, and the halving schedule.
+The current landing page has platform content (For Advertisers, For Chillers, How It Works with sign-up steps, testimonials, task stats). All of that platform content needs to move behind a "Launch App" route. The landing page becomes an INVESTOR-FACING coin page about the TaskCoins token, the mining narrative, and the halving schedule.
 
 Keep the same dark design system (colors, fonts, glass cards, animations). Do NOT rebuild from scratch — restructure what exists.
 
@@ -10,10 +10,10 @@ NAVIGATION BAR — change to:
 
 Left: TaskCoins logo (keep as is)
 Center links: About, How Mining Works, Tokenomics, Roadmap, Whitepaper
-Right: "Buy $TASK" button (green #09CE84 filled) and "Launch App" button (primary blue #388EFF filled)
+Right: "Buy $TaskCoins" button (green #09CE84 filled) and "Launch App" button (primary blue #388EFF filled)
 
 "Launch App" links to /app where all the platform pages live (dashboards, mining board, wallet, etc.)
-"Buy $TASK" links to a Uniswap URL (use https://app.uniswap.org as placeholder)
+"Buy $TaskCoins" links to a Uniswap URL (use https://app.uniswap.org as placeholder)
 
 All center links are anchor scroll links to sections on the same page.
 
@@ -26,33 +26,33 @@ Background: keep the dark gradient with subtle animated particles/grid.
 Top center: small glass pill badge that says "⛏️ Attention Mining Network" in blue text
 
 Main heading two lines:
-Line 1: "Mine TASK" in white
+Line 1: "Mine TaskCoins" in white
 Line 2: "With Your Phone." in white
-"TASK" should be in blue accent color (#388EFF). Font size 64px desktop, 40px mobile. Satoshi bold.
+"TaskCoins" should be in blue accent color (#388EFF). Font size 64px desktop, 40px mobile. Satoshi bold.
 
 Subheading: "590 million fixed supply. Halving every 6 months. Real humans mining with social media — not electricity." — Inter 20px, gray #9CA3AF
 
 Two buttons side by side:
-- "Buy $TASK" — green filled (#09CE84), large, with ArrowUpRight icon
+- "Buy $TaskCoins" — green filled (#09CE84), large, with ArrowUpRight icon
 - "Launch App" — blue filled (#388EFF), large, with Rocket icon
 
 Below buttons: a live countdown timer to September 1, 2026. Label above it: "Next Halving In:" in small gray text. Show 4 glass cards in a row: DAYS | HOURS | MINUTES | SECONDS. Each card has the number in 48px bold white and label below in 12px gray. The countdown ticks every second using setInterval. Give the countdown section a subtle blue glow/border.
 
-Below countdown: one line centered — "Early miners earn 100 TASK per block. After the halving — only 50." in 16px gray italic.
+Below countdown: one line centered — "Early miners earn 2x rewards. After the halving — rewards drop by half. Mine now." in 16px gray italic.
 
 ---
 
 SECTION 2 — WHAT IS ATTENTION MINING (new section):
 
 Heading: "What Is Attention Mining?"
-Subheading: "Bitcoin miners use electricity. TASK miners use their social media."
+Subheading: "Bitcoin miners use electricity. TaskCoins miners use their social media."
 
 Two columns on desktop, stacked on mobile.
 
 Left column — text content:
 "TaskCoins is the first Attention Mining Network. Instead of burning electricity to validate transactions, miners use their phone and social media accounts to create verified human engagement for crypto projects."
 
-"Your phone is your mining rig. Your followers are your hash rate. Every verified post is a mined block. Every block earns TASK tokens — until the next halving cuts rewards in half."
+"Your phone is your mining rig. Your followers are your hash rate. Every verified post is a mined block. Every block earns TaskCoins tokens — until the next halving cuts rewards in half."
 
 Right column — a visual comparison card (dark glass card):
 Title: "Bitcoin Mining vs Attention Mining"
@@ -62,7 +62,7 @@ Title: "Bitcoin Mining vs Attention Mining"
 | Mining rig | $10,000 ASIC machine | Your phone |
 | Energy source | Electricity | Social media reach |
 | Proof mechanism | Proof of Work | Proof of Attention |
-| Block reward | 3.125 BTC | 100 TASK |
+| Block reward | 3.125 BTC | 2x rewards (Era 1) |
 | Halving cycle | Every 4 years | Every 6 months |
 | Total supply | 21 million | 590 million |
 
@@ -79,35 +79,35 @@ Show 4 large cards in a row (scrollable on mobile):
 
 Card 1 — ACTIVE (blue glowing border, pulsing blue dot indicator):
 "Era 1" in small blue text at top
-"100 TASK" in large 36px bold white
-"per block" in gray below
+"2x" in large 48px bold white
+"Mining Rewards" in gray below
 "Months 1–6" at bottom in small gray
 Subtitle: "Current Era — Mine Now"
 
 Card 2 — UPCOMING (gray border, dimmed, lock icon):
 "Era 2" in small gray text
-"50 TASK" in 36px white (slightly dimmed)
-"per block"
+"1.5x" in 48px white (slightly dimmed)
+"Mining Rewards"
 "Months 7–12"
 Subtitle: "After Halving #1"
 
 Card 3 — UPCOMING:
 "Era 3"
-"25 TASK"
-"per block"
+"1.25x"
+"Mining Rewards"
 "Months 13–18"
 Subtitle: "After Halving #2"
 
 Card 4 — UPCOMING:
 "Era 4"
-"12.5 TASK"
-"per block"
+"1x"
+"Mining Rewards"
 "Months 19–24"
-Subtitle: "After Halving #3"
+Subtitle: "Standard Rate"
 
 Below the cards: a horizontal progress bar spanning the full width showing the 4 eras. Era 1 is filled with blue, the rest are gray. Small text markers at each halving point.
 
-Below that, centered text: "Mining pool: ~200,000,000 TASK allocated. Once it's mined — no more new tokens. Ever." in gray.
+Below that, centered text: "Early miners earn double rewards. Each halving cuts the bonus until rewards reach standard rate. The window is closing." in gray.
 
 ---
 
@@ -141,7 +141,7 @@ SECTION 5 — TOKENOMICS (keep existing section but modify):
 
 Keep the existing tokenomics section with the donut chart and supply info. But restructure it:
 
-Heading: "$TASK Tokenomics"
+Heading: "$TaskCoins Tokenomics"
 Subheading: "Built for scarcity. Designed to appreciate."
 
 Left side — key facts as a list with icons:
@@ -180,7 +180,7 @@ Description: "Pick a campaign from the Mining Board. Post the content. Submit yo
 
 Card 3: "03" in blue, coins icon
 Title: "Collect Rewards"
-Description: "Verified blocks earn 100 TASK — until the halving. After that, only 50. The earlier you start mining, the more you earn. Forever."
+Description: "Verified miners earn 2x rewards in Era 1. After the halving, the bonus drops. The earlier you start mining, the more you earn. Forever."
 
 ---
 
@@ -253,7 +253,7 @@ Heading: "The Halving Clock Is Ticking"
 Subheading: "Every day you wait, miners are earning 100 TASK per block. After the halving — only 50. Don't be late."
 
 Two large buttons:
-- "Buy $TASK" — white filled (stands out on blue background), large
+- "Buy $TaskCoins" — white filled (stands out on blue background), large
 - "Launch App — Start Mining" — white outline, large
 
 Repeat the countdown timer here (same as hero, ticking live). Smaller version.
@@ -291,7 +291,7 @@ RULES:
 - Keep all existing design tokens: dark theme, #388EFF blue, glass cards, Satoshi/Inter fonts
 - The halving countdown MUST tick every second (real-time JavaScript)
 - Mobile responsive on everything
-- "Buy $TASK" buttons use green #09CE84
+- "Buy $TaskCoins" buttons use green #09CE84
 - "Launch App" buttons use blue #388EFF
 - All platform pages move to /app/ routes
 - Landing page is purely investor/token focused — no platform UI on it
